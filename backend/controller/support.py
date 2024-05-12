@@ -4,7 +4,6 @@ import logging
 import json
 
 # Initialize the OpenAI client
-client = OpenAI(api_key="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")
 
 # Create the assistant
 assistant = client.beta.assistants.create(

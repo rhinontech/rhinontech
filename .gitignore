@@ -19,6 +19,9 @@ dist/
 # Package files
 *.jar
 
+# environment file
+.env
+
 # Maven
 target/
 dist/

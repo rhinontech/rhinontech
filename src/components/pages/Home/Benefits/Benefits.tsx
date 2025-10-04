@@ -1,8 +1,7 @@
 'use client'
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { TrendingDown } from "lucide-react";
-import { title } from "process";
 import { motion } from 'framer-motion';
 
 

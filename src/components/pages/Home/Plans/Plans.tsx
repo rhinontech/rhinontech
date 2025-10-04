@@ -2,8 +2,7 @@
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card";
-import { p } from "framer-motion/client";
-import { Check, CheckCircle2, Layers, Layers2 } from "lucide-react";
+import { Check, Layers, Layers2 } from "lucide-react";
 import React ,{ useState } from "react";
 
 

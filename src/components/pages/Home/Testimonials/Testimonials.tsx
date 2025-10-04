@@ -1,7 +1,8 @@
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
-import { TrendingDown } from "lucide-react"
 import { motion } from 'framer-motion'
+import Image from "next/image"
+
 
 
 const cards = [
@@ -56,12 +57,14 @@ export default function Testimonials() {
             <div className="grid mt-5 grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-5 max-w-7xl">
                 {cards.map((item, idx) => (
                     <motion.div
+                        key={idx}
+
                         initial={{ opacity: 0, y: 50, scale: 0.95 }}
                         whileInView={{ opacity: 1, y: 0, scale: 1 }}
                         transition={{ duration: 0.6, ease: "easeOut" }}
-                        viewport={{ once: true, amount:0.7 }} // 👈 only animate on first view
+                        viewport={{ once: true, amount: 0.7 }} // 👈 only animate on first view
                     >
-                        <Card key={idx} className="relative z-10 w-full rounded-3xl bg-neutral-950/70 backdrop-blur-4xl text-white p-6 overflow-hidden">
+                        <Card className="relative z-10 w-full rounded-3xl bg-neutral-950/70 backdrop-blur-4xl text-white p-6 overflow-hidden">
                             {/* Blue beam glow */}
                             <div className="absolute -right-1/4 -top-1/2 rounded-full h-full w-1/2 bg-gradient-to-l from-primary via-primary to-transparent blur-3xl" />
 
@@ -70,11 +73,11 @@ export default function Testimonials() {
 
                                 {/* Description */}
                                 <p className="text-md text-neutral-400 leading-relaxed">
-                                    "{item.content}"
+                                    &ldquo;{item.content}&rdquo;
                                 </p>
                                 <div className="flex gap-5">
                                     <div className="h-16 w-16 p-2 rounded-[10px] bg-card">
-                                        <img src={item.authorImg} alt={item.authorName} className="h-full w-full rounded-[10px] " />
+                                        <Image src={item.authorImg} alt={item.authorName} className="h-full w-full rounded-[10px] " />
                                     </div>
                                     <div className="flex flex-col py-1 justify-end">
                                         <p className="text-lg font-semibold">{item.authorName}</p>

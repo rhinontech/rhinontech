@@ -8,13 +8,11 @@ import {
   useMotionValueEvent,
   useScroll,
 } from "framer-motion";
-import { CircleUserRound, MenuIcon, User, XIcon } from "lucide-react";
+import {MenuIcon, XIcon } from "lucide-react";
 import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import AnimationContainer from "./AnimatedContainer/AnimatedContainer";
 import Image from "next/image";
-import RHLogo from "@/assets/logo/RH-Logo.png";
-import RichHarbor from "@/assets/logo/Rich Harbor R.png";
 import RhinonLogo from '@/assets/logo/RhinonTechLogo.png'
 import { useRouter } from "next/navigation";
 
@@ -67,7 +65,6 @@ const Wrapper = ({
 };
 
 const Navbar = () => {
-  const { user } = { user: "user" };
 
   const route = useRouter();
 

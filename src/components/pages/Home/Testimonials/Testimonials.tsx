@@ -77,7 +77,8 @@ export default function Testimonials() {
                                 </p>
                                 <div className="flex gap-5">
                                     <div className="h-16 w-16 p-2 rounded-[10px] bg-card">
-                                        <Image src={item.authorImg} alt={item.authorName} className="h-full w-full rounded-[10px] " />
+                                        <Image src={item.authorImg} alt={item.authorName} width={64}     
+                                            height={64} className="h-full w-full rounded-[10px] " />
                                     </div>
                                     <div className="flex flex-col py-1 justify-end">
                                         <p className="text-lg font-semibold">{item.authorName}</p>

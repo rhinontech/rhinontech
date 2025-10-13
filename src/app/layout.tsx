@@ -32,7 +32,6 @@ export default function RootLayout({
       >
         <HeroHeader />
         {children}
-        {children}
         <ChatbotWrapper />
         <Footer />
       </body>

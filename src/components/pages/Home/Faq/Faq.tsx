@@ -50,7 +50,7 @@ export default function FAQSection({
   return (
     <section
       className={cn(
-        'relative w-full bg-neutral-950 text-neutral-100 px-4 py-16',
+        'relative w-full bg-neutral-950 text-neutral-100 px-4',
         className
       )}
     >

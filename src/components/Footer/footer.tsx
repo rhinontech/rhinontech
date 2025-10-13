@@ -1,21 +1,9 @@
-import {
-  Dribbble,
-  Facebook,
-  Github,
-  Instagram,
-  Mail,
-  MapPin,
-  Phone,
-  Twitter,
-} from "lucide-react";
+import { Mail, MapPin, Phone, Twitter, Linkedin } from "lucide-react";
 import Link from "next/link";
 
 const data = {
-  facebookLink: "https://facebook.com/mvpblocks",
-  instaLink: "https://instagram.com/mvpblocks",
+  linkedinLink: "https://linkedin.com/company/mvpblocks",
   twitterLink: "https://twitter.com/mvpblocks",
-  githubLink: "https://github.com/mvpblocks",
-  dribbbleLink: "https://dribbble.com/mvpblocks",
   services: {
     webdev: "/web-development",
     webdesign: "/web-design",
@@ -27,11 +15,6 @@ const data = {
     team: "/meet-the-team",
     handbook: "/employee-handbook",
     careers: "/careers",
-  },
-  help: {
-    faqs: "/faqs",
-    support: "/support",
-    livechat: "/live-chat",
   },
   contact: {
     email: "hello@mvpblocks.com",
@@ -47,11 +30,8 @@ const data = {
 };
 
 const socialLinks = [
-  { icon: Facebook, label: "Facebook", href: data.facebookLink },
-  { icon: Instagram, label: "Instagram", href: data.instaLink },
+  { icon: Linkedin, label: "LinkedIn", href: data.linkedinLink },
   { icon: Twitter, label: "Twitter", href: data.twitterLink },
-  { icon: Github, label: "GitHub", href: data.githubLink },
-  { icon: Dribbble, label: "Dribbble", href: data.dribbbleLink },
 ];
 
 const aboutLinks = [
@@ -62,16 +42,16 @@ const aboutLinks = [
 ];
 
 const serviceLinks = [
-  { text: "Web Development", href: data.services.webdev },
-  { text: "Web Design", href: data.services.webdesign },
-  { text: "Marketing", href: data.services.marketing },
-  { text: "Google Ads", href: data.services.googleads },
+  { text: "Feature", href: "/feature" },
+  { text: "Pricing", href: "/pricing" },
 ];
 
-const helpfulLinks = [
-  { text: "FAQs", href: data.help.faqs },
-  { text: "Support", href: data.help.support },
-  { text: "Live Chat", href: data.help.livechat, hasIndicator: true },
+const policyLinks = [
+  { text: "Privacy Policy", href: "/privacy-policy" },
+  { text: "Terms & Conditions", href: "/terms-conditions" },
+  { text: "Security", href: "/security" },
+  { text: "Support", href: "/support" },
+  { text: "Contact Sales", href: "/contact-sales" },
 ];
 
 const contactInfo = [
@@ -82,10 +62,11 @@ const contactInfo = [
 
 export default function Footer() {
   return (
-    <footer className="bg-secondary dark:bg-secondary/20 mt-16 w-full place-self-end rounded-t-xl">
+    <footer className="bg-secondary dark:bg-secondary/20  w-full place-self-end rounded-t-xl">
       <div className="mx-auto max-w-screen-xl px-4 pt-16 pb-6 sm:px-6 lg:px-8 lg:pt-24">
-        <div className="grid grid-cols-1 gap-8 lg:grid-cols-3">
-          <div>
+        <div className="grid grid-cols-1 gap-8 lg:grid-cols-5">
+          {/* Logo & company description */}
+          <div className="lg:col-span-1">
             <div className="text-primary flex justify-center gap-2 sm:justify-start">
               <img
                 src={data.company.logo || "/placeholder.svg"}
@@ -113,30 +94,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-4 lg:col-span-2">
+          {/* Product, Legal & Support, Contact Us */}
+          <div className="lg:col-span-4 flex flex-col sm:flex-row sm:justify-end sm:gap-12">
             <div className="text-center sm:text-left">
-              <p className="text-lg font-medium">About Us</p>
-              <ul className="mt-8 space-y-4 text-sm">
-                {aboutLinks.map(({ text, href }) => (
-                  <li key={text}>
-                    <a
-                      className="text-secondary-foreground/70 transition"
-                      href={href}
-                    >
-                      {text}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-
-            <div className="text-center sm:text-left">
-              <p className="text-lg font-medium">Our Services</p>
+              <p className="text-lg font-medium">Product</p>
               <ul className="mt-8 space-y-4 text-sm">
                 {serviceLinks.map(({ text, href }) => (
                   <li key={text}>
                     <a
-                      className="text-secondary-foreground/70 transition"
+                      className="text-secondary-foreground/70 transition hover:text-secondary-foreground"
                       href={href}
                     >
                       {text}
@@ -147,27 +113,15 @@ export default function Footer() {
             </div>
 
             <div className="text-center sm:text-left">
-              <p className="text-lg font-medium">Helpful Links</p>
+              <p className="text-lg font-medium">Legal & Support</p>
               <ul className="mt-8 space-y-4 text-sm">
-                {helpfulLinks.map(({ text, href, hasIndicator }) => (
+                {policyLinks.map(({ text, href }) => (
                   <li key={text}>
                     <a
                       href={href}
-                      className={`${
-                        hasIndicator
-                          ? "group flex justify-center gap-1.5 sm:justify-start"
-                          : "text-secondary-foreground/70 transition"
-                      }`}
+                      className="text-secondary-foreground/70 transition hover:text-secondary-foreground"
                     >
-                      <span className="text-secondary-foreground/70 transition">
-                        {text}
-                      </span>
-                      {hasIndicator && (
-                        <span className="relative flex size-2">
-                          <span className="bg-primary absolute inline-flex h-full w-full animate-ping rounded-full opacity-75" />
-                          <span className="bg-primary relative inline-flex size-2 rounded-full" />
-                        </span>
-                      )}
+                      {text}
                     </a>
                   </li>
                 ))}

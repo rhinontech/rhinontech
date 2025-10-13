@@ -1,89 +1,79 @@
 'use client';
-import { Zap, Cpu, Fingerprint, Pencil, Settings2, Sparkles } from 'lucide-react';
+import { Zap, Cpu, Fingerprint } from 'lucide-react';
 import { motion, useReducedMotion } from 'framer-motion';
 import { FeatureCard } from '@/components/ui/grid-feature-cards';
 
 const features = [
-	{
-		title: 'Faaast',
-		icon: Zap,
-		description: 'It supports an entire helping developers and innovate.',
-	},
-	{
-		title: 'Powerful',
-		icon: Cpu,
-		description: 'It supports an entire helping developers and businesses.',
-	},
-	{
-		title: 'Security',
-		icon: Fingerprint,
-		description: 'It supports an helping developers businesses.',
-	},
-	{
-		title: 'Customization',
-		icon: Pencil,
-		description: 'It supports helping developers and businesses innovate.',
-	},
-	{
-		title: 'Control',
-		icon: Settings2,
-		description: 'It supports helping developers and businesses innovate.',
-	},
-	{
-		title: 'Built for AI',
-		icon: Sparkles,
-		description: 'It supports helping developers and businesses innovate.',
-	},
+  {
+    title: 'Faaast',
+    icon: Zap,
+    description: 'It supports an entire helping developers and innovate.',
+  },
+  {
+    title: 'Powerful',
+    icon: Cpu,
+    description: 'It supports an entire helping developers and businesses.',
+  },
+  {
+    title: 'Security',
+    icon: Fingerprint,
+    description: 'It supports an helping developers businesses.',
+  },
 ];
 
 export default function FeatureCardsDemo() {
-	return (
-		<section className="py-16 md:py-32">
-			<div className="mx-auto w-full max-w-5xl space-y-8 px-4">
-				<AnimatedContainer className="mx-auto max-w-3xl text-center">
-					<h2 className="text-3xl font-bold tracking-wide text-balance md:text-4xl lg:text-5xl xl:font-extrabold">
-						Power. Speed. Control.
-					</h2>
-					<p className="text-muted-foreground mt-4 text-sm tracking-wide text-balance md:text-base">
-						Everything you need to build fast, secure, scalable apps.
-					</p>
-				</AnimatedContainer>
+  return (
+      <div className="mx-auto w-full max-w-6xl space-y-12 px-4">
+        <AnimatedContainer className="mx-auto max-w-3xl text-center">
+          <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-balance">
+            Power. Speed. Control.
+          </h2>
+          <p className="text-muted-foreground mt-6 text-base md:text-lg tracking-wide">
+            Everything you need to build fast, secure, scalable apps.
+          </p>
+        </AnimatedContainer>
 
-				<AnimatedContainer
-					delay={0.4}
-					className="grid grid-cols-1 divide-x divide-y divide-dashed border border-dashed sm:grid-cols-2 md:grid-cols-3"
-				>
-					{features.map((feature, i) => (
-						<FeatureCard key={i} feature={feature} />
-					))}
-				</AnimatedContainer>
-			</div>
-		</section>
-	);
+        <AnimatedContainer
+          delay={0.4}
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8"
+        >
+          {features.map((feature, i) => (
+            <div
+              key={i}
+              className="relative p-8 rounded-2xl border border-white/20 bg-white/10 backdrop-blur-lg shadow-lg hover:shadow-2xl transition-all duration-300 overflow-hidden"
+            >
+              {/* Blue light at top-right */}
+              <div className="absolute top-0 right-0 w-32 h-32 bg-blue-400/40 rounded-full blur-3xl -translate-x-1/3 -translate-y-1/3 pointer-events-none" />
+
+              {/* Feature Card content */}
+              <FeatureCard feature={feature} />
+            </div>
+          ))}
+        </AnimatedContainer>
+      </div>
+  );
 }
 
 type ViewAnimationProps = {
-	delay?: number;
-	className?: React.ComponentProps<typeof motion.div>['className'];
-	children: React.ReactNode;
+  delay?: number;
+  className?: React.ComponentProps<typeof motion.div>['className'];
+  children: React.ReactNode;
 };
 
 function AnimatedContainer({ className, delay = 0.1, children }: ViewAnimationProps) {
-	const shouldReduceMotion = useReducedMotion();
+  const shouldReduceMotion = useReducedMotion();
 
-	if (shouldReduceMotion) {
-		return children;
-	}
+  if (shouldReduceMotion) return <div className={className}>{children}</div>;
 
-	return (
-		<motion.div
-			initial={{ filter: 'blur(4px)', translateY: -8, opacity: 0 }}
-			whileInView={{ filter: 'blur(0px)', translateY: 0, opacity: 1 }}
-			viewport={{ once: true }}
-			transition={{ delay, duration: 0.8 }}
-			className={className}
-		>
-			{children}
-		</motion.div>
-	);
+  return (
+    <motion.div
+      initial={{ filter: 'blur(4px)', translateY: -8, opacity: 0 }}
+      whileInView={{ filter: 'blur(0px)', translateY: 0, opacity: 1 }}
+      viewport={{ once: true }}
+      transition={{ delay, duration: 0.8 }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  );
 }

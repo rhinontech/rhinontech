@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import React from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { cn } from '@/lib/utils';
+import React from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { cn } from "@/lib/utils";
 
 type FAQ = {
   q: string;
@@ -18,26 +18,26 @@ type FAQSectionProps = {
 
 const DEFAULT_FAQS: FAQ[] = [
   {
-    q: 'What is your ERP’s deployment model?',
-    a: 'We support cloud and on-prem deployments. You can migrate between them without losing data or customizations.',
+    q: "What is your ERP’s deployment model?",
+    a: "We support cloud and on-prem deployments. You can migrate between them without losing data or customizations.",
   },
   {
-    q: 'How long does implementation take?',
-    a: 'Typical go-live is 4–8 weeks depending on modules and integrations. We run staggered rollouts to minimize downtime.',
+    q: "How long does implementation take?",
+    a: "Typical go-live is 4–8 weeks depending on modules and integrations. We run staggered rollouts to minimize downtime.",
   },
   {
-    q: 'Is there role-based access control?',
-    a: 'Yes. Roles, permissions, and data scopes are fully configurable. We also support SSO with major IdPs.',
+    q: "Is there role-based access control?",
+    a: "Yes. Roles, permissions, and data scopes are fully configurable. We also support SSO with major IdPs.",
   },
   {
-    q: 'Do you offer customer support?',
-    a: '24/7 support with response-time SLAs. Dedicated success managers are available on Growth and Enterprise plans.',
+    q: "Do you offer customer support?",
+    a: "24/7 support with response-time SLAs. Dedicated success managers are available on Growth and Enterprise plans.",
   },
 ];
 
 export default function Faq({
-  title = 'Frequently Asked Questions',
-  description = 'Answers to common questions about our platform, pricing, and support.',
+  title = "Frequently Asked Questions",
+  description = "Answers to common questions about our platform, pricing, and support.",
   faqs = DEFAULT_FAQS,
   className,
 }: FAQSectionProps) {
@@ -46,7 +46,7 @@ export default function Faq({
   return (
     <section
       className={cn(
-        'relative w-full bg-neutral-950 text-neutral-100 px-4',
+        "relative w-full bg-neutral-950 text-neutral-100 px-4",
         className
       )}
     >
@@ -73,8 +73,8 @@ export default function Faq({
               <li key={i}>
                 <button
                   className={cn(
-                    'w-full text-left px-4 py-4 md:px-6 md:py-5',
-                    'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40'
+                    "w-full text-left px-4 py-4 md:px-6 md:py-5",
+                    "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/40"
                   )}
                   aria-expanded={isOpen}
                   aria-controls={`faq-panel-${i}`}
@@ -94,14 +94,17 @@ export default function Faq({
                             animate="open"
                             exit="collapsed"
                             variants={{
-                              open: { height: 'auto', opacity: 1 },
+                              open: { height: "auto", opacity: 1 },
                               collapsed: { height: 0, opacity: 0 },
                             }}
                             transition={{ duration: 0.25 }}
                             className="overflow-hidden"
                           >
                             <motion.p
-                              variants={{ open: { y: 0 }, collapsed: { y: -8 } }}
+                              variants={{
+                                open: { y: 0 },
+                                collapsed: { y: -8 },
+                              }}
                               transition={{ duration: 0.25 }}
                               className="mt-2 pr-2 text-sm leading-6 text-neutral-300 md:text-[15px]"
                             >
@@ -116,7 +119,11 @@ export default function Faq({
                       className="mt-1 size-5 shrink-0 text-neutral-300"
                       initial={false}
                       animate={{ rotate: isOpen ? 180 : 0 }}
-                      transition={{ type: 'spring', stiffness: 260, damping: 22 }}
+                      transition={{
+                        type: "spring",
+                        stiffness: 260,
+                        damping: 22,
+                      }}
                     >
                       <path
                         d="M5 8l5 5 5-5"
@@ -142,7 +149,7 @@ export default function Faq({
           viewport={{ once: true }}
           transition={{ duration: 0.35 }}
         >
-          Still have questions?{' '}
+          Still have questions?{" "}
           <a
             href="#contact"
             className="underline decoration-white/40 underline-offset-4 hover:decoration-white/80"

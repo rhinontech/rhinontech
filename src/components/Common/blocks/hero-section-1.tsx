@@ -70,7 +70,15 @@ export function HeroSection() {
               aria-hidden
               className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--background)_75%)]"
             />
-            <div className="mx-auto max-w-7xl px-6">
+            <div className="absolute right-[20%] top-5 animate-spin-slow">
+              <img
+                src="https://rhinontech.com/assets/metallic-4J6O_pZt.png"
+                alt=""
+                className="w-54 h-54"
+              />
+            </div>
+
+            <div className="mx-auto max-w-5xl p-6 backdrop-blur-lg rounded-2xl">
               <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
                 <AnimatedGroup variants={transitionVariants}>
                   <ShimmerBadge />

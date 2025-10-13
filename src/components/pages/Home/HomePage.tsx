@@ -3,7 +3,7 @@ import { SplineSceneBasic } from "@/components/blocks/spline-demo";
 import FeatureCardsDemo from "@/components/blocks/feature-cards-demo";
 import BentoGridDemo from "@/components/blocks/bento-grid-demo";
 import TestimonialsSection2 from "@/components/ui/testimonial2";
-import FAQSection from "@/components/pages/Home/Faq/faq";
+import FAQSection from "@/components/pages/Home/Faq/Faq";
 import { HowItWorks } from "@/components/blocks/how-it-works";
 import ComparisonSection from "@/components/blocks/comparison-table";
 import ContactSales from "@/components/blocks/contact-sales";

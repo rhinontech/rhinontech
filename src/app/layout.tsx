@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import { HeroHeader } from "@/components/Header/Header";
-import Footer from "@/components/Footer/footer";
-import ChatbotWrapper from "@/components/Chatbot/ChatbotWrapper";
+import { HeroHeader } from "@/components/Common/Header/Header";
+import Footer from "@/components/Common/Footer/footer";
+import ChatbotWrapper from "@/components/Common/Chatbot/ChatbotWrapper";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

@@ -1,4 +1,4 @@
-import { HeroSection } from "@/components/blocks/hero-section-1"
+import { HeroSection } from "@/components/Common/blocks/hero-section-1"
 
 export function Demo() {
     return (

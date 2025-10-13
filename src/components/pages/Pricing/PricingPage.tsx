@@ -1,7 +1,7 @@
 import React from 'react'
 import PricingComponent from './PricingTable/PricingComponent'
 import FAQSection from './Faq/faq'
-import ContactSales from '@/components/blocks/contact-sales'
+import ContactSales from '@/components/Common/blocks/contact-sales'
 
 export default function PricingPage() {
   return (

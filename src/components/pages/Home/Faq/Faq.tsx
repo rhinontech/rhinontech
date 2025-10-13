@@ -2,11 +2,7 @@
 
 import React from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-
-/* simple class merger to avoid external deps */
-function cn(...classes: Array<string | false | null | undefined>) {
-  return classes.filter(Boolean).join(' ');
-}
+import { cn } from '@/lib/utils';
 
 type FAQ = {
   q: string;
@@ -39,7 +35,7 @@ const DEFAULT_FAQS: FAQ[] = [
   },
 ];
 
-export default function FAQSection({
+export default function Faq({
   title = 'Frequently Asked Questions',
   description = 'Answers to common questions about our platform, pricing, and support.',
   faqs = DEFAULT_FAQS,

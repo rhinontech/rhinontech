@@ -179,3 +179,33 @@
   animation: spin-slow 20s linear infinite;
 }
 
+
+@theme {
+  /* 🌈 Custom radial gradients */
+  --background-image-gradient-radial: radial-gradient(circle 9000px at 50% -62%, rgb(0, 0, 0) 13%, rgba(0,64,189,0.99) 20%, rgb(255, 255, 255) 25%);
+  --background-image-gradient-radial-small: radial-gradient(circle 4500px at 50% -50%, rgb(0, 0, 0) 13%, rgba(0,64,189,0.99) 20%, rgb(255, 255, 255) 25%);
+  --background-image-gradient-radial-smallest: radial-gradient(circle 25000px at 50% -50%, rgb(0, 0, 0) 2%, rgba(0,64,189,0.99) 3%, rgb(255, 255, 255) 15%);
+  --background-image-gradient-text-radial: radial-gradient(circle, rgb(255, 255, 255) 0%, rgba(255,255,255,0.5) 65%);
+
+  /* 🎨 Global color variables */
+  --color-background: hsl(0 0% 3.9%);
+  --color-foreground: hsl(0 0% 98%);
+  --color-card: hsl(0 0% 3.9%);
+  --color-card-foreground: hsl(0 0% 98%);
+  --color-popover: hsl(0 0% 3.9%);
+  --color-popover-foreground: hsl(0 0% 98%);
+  --color-primary: hsl(0 0% 98%);
+  --color-primary-foreground: hsl(0 0% 9%);
+  --color-secondary: hsl(0 0% 14.9%);
+  --color-secondary-foreground: hsl(0 0% 98%);
+  --color-muted: hsl(0 0% 14.9%);
+  --color-muted-foreground: hsl(0 0% 63.9%);
+  --color-accent: hsl(0 0% 14.9%);
+  --color-accent-foreground: hsl(0 0% 98%);
+  --color-destructive: hsl(0 62.8% 30.6%);
+  --color-destructive-foreground: hsl(0 0% 98%);
+  --color-border: hsl(0 0% 14.9%);
+  --color-input: hsl(0 0% 14.9%);
+  --color-ring: hsl(0 0% 83.1%);
+}
+

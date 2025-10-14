@@ -83,7 +83,7 @@ export function HeroSection() {
                 <AnimatedGroup variants={transitionVariants}>
                   <ShimmerBadge />
 
-                  <h1 className="mt-8 max-w-4xl mx-auto text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem] font-semibold">
+                  <h1 className="mt-8 max-w-4xl mx-auto bg-gradient-text-radial bg-clip-text text-transparent text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem] font-semibold pb-2.5">
                     Modern Solutions for Customer Engagement
                   </h1>
                   <p className="mx-auto mt-8 max-w-2xl text-balance text-lg">

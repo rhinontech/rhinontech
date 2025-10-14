@@ -4,6 +4,7 @@ import "./globals.css";
 import { HeroHeader } from "@/components/Common/Header/Header";
 import Footer from "@/components/Common/Footer/footer";
 import ChatbotWrapper from "@/components/Common/Chatbot/ChatbotWrapper";
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -18,6 +19,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Rhinon Tech | Home",
   description: "Rhinon Tech - Your AI Assistant",
+  verification: {
+    google: "oFNjd84lhv6mmqsdSBESEE01R9vODYcjfYeb2DNcu50",
+  },
 };
 
 export default function RootLayout({
@@ -27,6 +31,21 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark">
+      <head>
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-9G0GGFT317"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-9G0GGFT317');
+          `}
+        </Script>
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >

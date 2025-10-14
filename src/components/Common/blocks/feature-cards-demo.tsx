@@ -25,7 +25,7 @@ export default function FeatureCardsDemo() {
   return (
       <div className="mx-auto w-full max-w-6xl space-y-12 px-4">
         <AnimatedContainer className="mx-auto max-w-3xl text-center">
-          <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-balance">
+          <h2 className="text-4xl md:text-5xl lg:text-5xl font-bold tracking-wide text-balance bg-gradient-text-radial bg-clip-text text-transparent">
             Power. Speed. Control.
           </h2>
           <p className="text-muted-foreground mt-6 text-base md:text-lg tracking-wide">

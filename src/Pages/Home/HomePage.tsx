@@ -10,7 +10,7 @@ import InfiniteCompany from "@/components/Common/blocks/infinite-company";
 
 export default function HomePage() {
   return (
-    <div className="flex flex-col gap-24">
+    <div className="flex flex-col gap-24 relative">
       <HeroSection />
       <InfiniteCompany/>
       <BentoGridDemo />

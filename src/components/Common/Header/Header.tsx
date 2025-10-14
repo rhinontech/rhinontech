@@ -47,7 +47,7 @@ export const HeroHeader = () => {
               >
                 <Image
                   src="/assets/rhinonlogo.png"
-                  alt="Product Space Logo"
+                  alt="Rhinon Tech Logo"
                   width={100}
                   height={100}
                   className="object-contain h-[40px] w-auto"
@@ -117,10 +117,20 @@ export const HeroHeader = () => {
                 <Button
                   asChild
                   size="sm"
+                  variant="outline"
                   className={cn(isScrolled ? "lg:inline-flex" : "hidden")}
                 >
                   <Link href="#">
-                    <span>Get Started</span>
+                    <span>Login</span>
+                  </Link>
+                </Button>
+                <Button
+                  asChild
+                  size="sm"
+                  className={cn(isScrolled ? "lg:inline-flex" : "hidden")}
+                >
+                  <Link href="#">
+                    <span>Sign Up</span>
                   </Link>
                 </Button>
               </div>

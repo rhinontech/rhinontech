@@ -43,9 +43,9 @@ export const CyberneticBentoGrid = () => {
     <section className="bg-background relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="w-full max-w-6xl mx-auto z-10">
-          <h1 className="text-4xl sm:text-5xl font-bold text-foreground text-center mb-8">
+          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-8  bg-gradient-text-radial bg-clip-text text-transparent">
             Core Features
-          </h1>
+          </h2>
           <div className="bento-grid">
             <BentoItem className="col-span-2 row-span-2 flex flex-col justify-between">
               <div>

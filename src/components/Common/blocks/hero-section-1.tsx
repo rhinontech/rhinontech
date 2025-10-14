@@ -94,7 +94,10 @@ export function HeroSection() {
                 variants={{
                   container: {
                     visible: {
-                      transition: { staggerChildren: 0.05, delayChildren: 0.75 },
+                      transition: {
+                        staggerChildren: 0.05,
+                        delayChildren: 0.75,
+                      },
                     },
                   },
                   ...transitionVariants,
@@ -102,23 +105,7 @@ export function HeroSection() {
                 className="mt-12 flex flex-col md:flex-row items-center justify-center gap-2 w-full px-0 md:px-4"
               >
                 {/* First Button */}
-                <div
-                  key={1}
-                  className="w-full md:w-auto flex bg-foreground/10 rounded-[14px] border p-0.5 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-foreground/20"
-                >
-                  <Button
-                    asChild
-                    size="lg"
-                    className="flex-1 sm:w-full w-[300px] rounded-xl px-5 text-base bg-white text-black transition-all duration-300 hover:bg-white hover:text-black"
-                  >
-                    <Link href="#link">
-                      <span className="text-nowrap">Install & Try (10 min)</span>
-                    </Link>
-                  </Button>
-                </div>
-
-                {/* Second Button */}
-                <div key={2} className="w-full md:w-auto flex">
+                <div key={1} className="w-full md:w-auto flex">
                   <Button
                     asChild
                     size="lg"
@@ -128,6 +115,24 @@ export function HeroSection() {
                     <Link href="#link">
                       <span className="text-nowrap">
                         Book a 15-min Live Install Demo
+                      </span>
+                    </Link>
+                  </Button>
+                </div>
+
+                {/* Second Button */}
+                <div
+                  key={2}
+                  className="w-full md:w-auto flex bg-foreground/10 rounded-[14px] border p-0.5 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-foreground/20"
+                >
+                  <Button
+                    asChild
+                    size="lg"
+                    className="flex-1 sm:w-full w-[300px] rounded-xl px-5 text-base bg-blue-900 text-white transition-all duration-300 hover:bg-blue-800 hover:text-white"
+                  >
+                    <Link href="#link">
+                      <span className="text-nowrap">
+                        Install & Try (10 min)
                       </span>
                     </Link>
                   </Button>
@@ -154,7 +159,7 @@ export function HeroSection() {
                   aria-hidden
                   className="bg-gradient-to-b to-background absolute inset-0 z-10 from-transparent from-35%"
                 />
-                <div className="inset-shadow-2xs ring-background dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15 ring-1">
+                <div className="inset-shadow-2xs dark:inset-shadow-white/20 bg-background relative mx-auto max-w-6xl overflow-hidden rounded-2xl border p-4 shadow-lg shadow-zinc-950/15">
                   <img
                     className="bg-background aspect-15/8 relative hidden rounded-2xl dark:block"
                     src="/assets/dashboardimg.png"

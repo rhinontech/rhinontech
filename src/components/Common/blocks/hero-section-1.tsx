@@ -29,6 +29,7 @@ export function HeroSection() {
   return (
     <>
       <main className="overflow-hidden">
+        {/* Background radial blur */}
         <div
           aria-hidden
           className="z-[2] absolute inset-0 pointer-events-none isolate opacity-50 contain-strict hidden lg:block"
@@ -37,22 +38,16 @@ export function HeroSection() {
           <div className="h-[80rem] absolute left-0 top-0 w-56 -rotate-45 rounded-full bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.06)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)] [translate:5%_-50%]" />
           <div className="h-[80rem] -translate-y-[350px] absolute left-0 top-0 w-56 -rotate-45 bg-[radial-gradient(50%_50%_at_50%_50%,hsla(0,0%,85%,.04)_0,hsla(0,0%,45%,.02)_80%,transparent_100%)]" />
         </div>
+
         <section>
           <div className="relative pt-24 md:pt-36">
             <AnimatedGroup
               variants={{
                 container: {
-                  visible: {
-                    transition: {
-                      delayChildren: 1,
-                    },
-                  },
+                  visible: { transition: { delayChildren: 1 } },
                 },
                 item: {
-                  hidden: {
-                    opacity: 0,
-                    y: 20,
-                  },
+                  hidden: { opacity: 0, y: 20 },
                   visible: {
                     opacity: 1,
                     y: 0,
@@ -66,10 +61,13 @@ export function HeroSection() {
               }}
               className="absolute inset-0 -z-20"
             ></AnimatedGroup>
+
             <div
               aria-hidden
               className="absolute inset-0 -z-10 size-full [background:radial-gradient(125%_125%_at_50%_100%,transparent_0%,var(--background)_75%)]"
             />
+
+            {/* Floating icon */}
             <div className="absolute right-[20%] top-5 animate-spin-slow">
               <img
                 src="https://rhinontech.com/assets/metallic-4J6O_pZt.png"
@@ -78,57 +76,54 @@ export function HeroSection() {
               />
             </div>
 
-            <div className="mx-auto max-w-5xl p-6 backdrop-blur-lg rounded-2xl">
-              <div className="text-center sm:mx-auto lg:mr-auto lg:mt-0">
-                <AnimatedGroup variants={transitionVariants}>
-                  <ShimmerBadge />
+            {/* HERO CONTENT */}
+            <div className="mx-auto max-w-5xl w-full px-4 p-6 backdrop-blur-lg rounded-2xl text-center">
+              <AnimatedGroup variants={transitionVariants}>
+                <ShimmerBadge />
+                <h1 className="mt-8 max-w-4xl mx-auto text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem] font-semibold">
+                  Modern Solutions for Customer Engagement
+                </h1>
+                <p className="mx-auto mt-8 max-w-2xl text-balance text-lg">
+                  Highly customizable components for building modern websites
+                  and applications that look and feel the way you mean it.
+                </p>
+              </AnimatedGroup>
 
-                  <h1 className="mt-8 max-w-4xl mx-auto text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem] font-semibold">
-                    Modern Solutions for Customer Engagement
-                  </h1>
-                  <p className="mx-auto mt-8 max-w-2xl text-balance text-lg">
-                    Highly customizable components for building modern websites
-                    and applications that look and feel the way you mean it.
-                  </p>
-                </AnimatedGroup>
-
-                <AnimatedGroup
-                  variants={{
-                    container: {
-                      visible: {
-                        transition: {
-                          staggerChildren: 0.05,
-                          delayChildren: 0.75,
-                        },
-                      },
+              {/* CTA Buttons */}
+              <AnimatedGroup
+                variants={{
+                  container: {
+                    visible: {
+                      transition: { staggerChildren: 0.05, delayChildren: 0.75 },
                     },
-                    ...transitionVariants,
-                  }}
-                  className="mt-12 flex flex-col items-center justify-center gap-2 md:flex-row"
+                  },
+                  ...transitionVariants,
+                }}
+                className="mt-12 flex flex-col md:flex-row items-center justify-center gap-2 w-full px-0 md:px-4"
+              >
+                {/* First Button */}
+                <div
+                  key={1}
+                  className="w-full md:w-auto flex bg-foreground/10 rounded-[14px] border p-0.5 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-foreground/20"
                 >
-                  <div
-                    key={1}
-                    className="bg-foreground/10 rounded-[14px] border p-0.5 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-foreground/20"
-                  >
-                    <Button
-                      asChild
-                      size="lg"
-                      className="rounded-xl px-5 text-base bg-white text-black transition-all duration-300 hover:bg-white hover:text-black"
-                    >
-                      <Link href="#link">
-                        <span className="text-nowrap">
-                          Install & Try (10 min)
-                        </span>
-                      </Link>
-                    </Button>
-                  </div>
-
                   <Button
-                    key={2}
+                    asChild
+                    size="lg"
+                    className="flex-1 sm:w-full w-[300px] rounded-xl px-5 text-base bg-white text-black transition-all duration-300 hover:bg-white hover:text-black"
+                  >
+                    <Link href="#link">
+                      <span className="text-nowrap">Install & Try (10 min)</span>
+                    </Link>
+                  </Button>
+                </div>
+
+                {/* Second Button */}
+                <div key={2} className="w-full md:w-auto flex">
+                  <Button
                     asChild
                     size="lg"
                     variant="ghost"
-                    className="h-10.5 rounded-xl px-5 border border-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                    className="flex-1 sm:w-full w-[300px]  h-10.5 rounded-xl px-5 border border-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
                   >
                     <Link href="#link">
                       <span className="text-nowrap">
@@ -136,10 +131,11 @@ export function HeroSection() {
                       </span>
                     </Link>
                   </Button>
-                </AnimatedGroup>
-              </div>
+                </div>
+              </AnimatedGroup>
             </div>
 
+            {/* IMAGE MOCKUP */}
             <AnimatedGroup
               variants={{
                 container: {
@@ -153,7 +149,7 @@ export function HeroSection() {
                 ...transitionVariants,
               }}
             >
-              <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
+              <div className="relative mt-8 overflow-hidden px-2 sm:mt-12 md:mt-20">
                 <div
                   aria-hidden
                   className="bg-gradient-to-b to-background absolute inset-0 z-10 from-transparent from-35%"

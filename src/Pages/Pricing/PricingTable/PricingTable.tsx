@@ -1,9 +1,10 @@
 import React from 'react';
 import { cn } from '@/lib/utils';
 import { CheckIcon, LucideIcon, MinusIcon } from 'lucide-react';
-import { Badge } from '../Badge/Badge';
+import { Badge } from '@/components/ui/badge';
 
-function PricingTable({ className, ...props }: React.ComponentProps<'table'>) {
+
+export default function PricingTable({ className, ...props }: React.ComponentProps<'table'>) {
 	return (
 		<div
 			data-slot="table-container"

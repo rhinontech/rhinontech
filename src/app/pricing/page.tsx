@@ -1,6 +1,6 @@
-import PricingComponent from "@/Pages/Pricing/PricingPage";
+import PricingComponent from "@/pages/Pricing/PricingPage";
 import React from "react";
 
-export default function Pricing() {
+export default function page() {
   return <PricingComponent />;
 }

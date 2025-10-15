@@ -1,9 +1,8 @@
 "use client";
 import Link from "next/link";
 import React from "react";
-import { ArrowRight, ChevronRight, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { AnimatedGroup } from "@/components/ui/animated-group";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 
@@ -25,6 +24,7 @@ export const HeroHeader = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   return (
     <header>
       <nav
@@ -38,6 +38,7 @@ export const HeroHeader = () => {
           )}
         >
           <div className="relative flex flex-wrap items-center justify-between gap-6 py-3 lg:gap-0 lg:py-4">
+            {/* Logo + Mobile Menu Button */}
             <div className="flex w-full justify-between lg:w-auto">
               <Link
                 href="/"
@@ -53,16 +54,21 @@ export const HeroHeader = () => {
                 />
               </Link>
 
+              {/* Mobile Menu Button */}
               <button
                 onClick={() => setMenuState(!menuState)}
-                aria-label={menuState == true ? "Close Menu" : "Open Menu"}
+                aria-label={menuState ? "Close Menu" : "Open Menu"}
                 className="relative z-20 -m-2.5 -mr-4 block cursor-pointer p-2.5 lg:hidden"
               >
-                <Menu className="in-data-[state=active]:rotate-180 group-data-[state=active]:scale-0 group-data-[state=active]:opacity-0 m-auto size-6 duration-200" />
-                <X className="group-data-[state=active]:rotate-0 group-data-[state=active]:scale-100 group-data-[state=active]:opacity-100 absolute inset-0 m-auto size-6 -rotate-180 scale-0 opacity-0 duration-200" />
+                {menuState ? (
+                  <X className="size-6 duration-200" />
+                ) : (
+                  <Menu className="size-6 duration-200" />
+                )}
               </button>
             </div>
 
+            {/* Desktop Menu */}
             <div className="absolute inset-0 m-auto hidden size-fit lg:block">
               <ul className="flex gap-8 text-sm">
                 {menuItems.map((item, index) => (
@@ -71,46 +77,47 @@ export const HeroHeader = () => {
                       href={item.href}
                       className="text-muted-foreground hover:text-accent-foreground block duration-150"
                     >
-                      <span>{item.name}</span>
+                      {item.name}
                     </Link>
                   </li>
                 ))}
               </ul>
             </div>
 
-            <div className="bg-background group-data-[state=active]:block lg:group-data-[state=active]:flex mb-6 hidden w-full flex-wrap items-center justify-end space-y-8 rounded-3xl border p-6 shadow-2xl shadow-zinc-300/20 md:flex-nowrap lg:m-0 lg:flex lg:w-fit lg:gap-6 lg:space-y-0 lg:border-transparent lg:bg-transparent lg:p-0 lg:shadow-none dark:shadow-none dark:lg:bg-transparent">
-              <div className="lg:hidden">
-                <ul className="space-y-6 text-base">
+            {/* Buttons + Mobile Menu */}
+            <div
+              className={cn(
+                "bg-background lg:flex hidden w-fit items-center justify-end gap-4 rounded-3xl border-transparent p-0 shadow-none",
+                menuState &&
+                  "absolute top-[100%] left-0 w-full flex flex-col space-y-4 border p-6 rounded-2xl shadow-2xl lg:hidden"
+              )}
+            >
+              {/* Mobile Links */}
+              {menuState && (
+                <ul className="space-y-4 text-base lg:hidden">
                   {menuItems.map((item, index) => (
                     <li key={index}>
                       <Link
                         href={item.href}
                         className="text-muted-foreground hover:text-accent-foreground block duration-150"
                       >
-                        <span>{item.name}</span>
+                        {item.name}
                       </Link>
                     </li>
                   ))}
                 </ul>
-              </div>
-              <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                <Button
-                  asChild
-                  variant="outline"
-                  size="sm"
-                  className={cn(isScrolled && "lg:hidden")}
-                >
+              )}
+
+              {/* Login / Signup Buttons */}
+              <div className="flex flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
+                <Button asChild variant="outline" size="sm">
                   <Link href="https://app.rhinontech.com/auth/login">
-                    <span>Login</span>
+                    Login
                   </Link>
                 </Button>
-                <Button
-                  asChild
-                  size="sm"
-                  className={cn(isScrolled && "lg:hidden")}
-                >
+                <Button asChild size="sm">
                   <Link href="https://app.rhinontech.com/auth/signup">
-                    <span>Sign Up</span>
+                    Sign Up
                   </Link>
                 </Button>
               </div>

@@ -118,7 +118,7 @@ export default function HowItWorks() {
             <span className="w-2 h-2 rounded-full bg-blue-500 animate-pulse" />
             <span className="text-sm text-gray-400">Workflow</span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
+          <h2 className="text-3xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-white via-gray-300 to-gray-500 bg-clip-text text-transparent">
             How Rhinontech Works
           </h2>
           <p className="text-xl text-gray-400 max-w-2xl mx-auto">

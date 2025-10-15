@@ -18,8 +18,7 @@ export default function ComparisonSection() {
     },
     {
       label: "Lead Capture & Qualification",
-      rhinon:
-        "Built-in AI identifies, qualifies & routes leads automatically",
+      rhinon: "Built-in AI identifies, qualifies & routes leads automatically",
       generic: "Basic lead forms or manual tagging",
       multiple: "Lead data scattered across tools. Hard to track",
     },
@@ -33,8 +32,7 @@ export default function ComparisonSection() {
       label: "Data Sync & Workflow",
       rhinon: "All data unified - CRM, chat, and campaigns in one system",
       generic: "Partial integrations, often expensive add-ons",
-      multiple:
-        "Prone to sync failures, data silos & manual updates",
+      multiple: "Prone to sync failures, data silos & manual updates",
     },
     {
       label: "Scalability & Maintenance",
@@ -46,15 +44,13 @@ export default function ComparisonSection() {
       label: "Customization & Control",
       rhinon: "Developer-friendly (npm + API) + no-code setup",
       generic: "Limited control, mostly UI-based customizations",
-      multiple:
-        "Requires engineering for every integration or tweak",
+      multiple: "Requires engineering for every integration or tweak",
     },
     {
       label: "Reporting & Insights",
       rhinon: "Unified dashboard: leads, support, conversions",
       generic: "Separate analytics per module",
-      multiple:
-        "Fragmented reports, no clear ROI visibility",
+      multiple: "Fragmented reports, no clear ROI visibility",
     },
     {
       label: "Pricing & ROI",
@@ -64,8 +60,7 @@ export default function ComparisonSection() {
     },
     {
       label: "Who It’s Built For",
-      rhinon:
-        "CX, Growth, and Marketing teams at lean startups & SMBs",
+      rhinon: "CX, Growth, and Marketing teams at lean startups & SMBs",
       generic: "Primarily CX teams at mid-large companies",
       multiple: "Founders juggling multiple tools for each function",
     },
@@ -80,8 +75,7 @@ export default function ComparisonSection() {
       rhinon:
         "Converts more, costs less, and gives full visibility across the funnel",
       generic: "Good for support, limited for growth & revenue",
-      multiple:
-        "Flexible but chaotic, lacks unified intelligence",
+      multiple: "Flexible but chaotic, lacks unified intelligence",
     },
     {
       label: "Overall Verdict",
@@ -110,15 +104,16 @@ export default function ComparisonSection() {
     <section className="text-white px-4 sm:px-6 md:px-8 py-10">
       {/* Header */}
       <div className="text-center mb-12 sm:mb-16">
-        <button className="px-5 sm:px-6 py-2 text-xs sm:text-sm font-medium text-white border border-purple-500 rounded-full mb-4 hover:bg-purple-600/20 transition">
+        <button className="px-5 sm:px-6 py-2 text-xs sm:text-sm font-medium text-white border border-[#0E489F] rounded-full mb-4 hover:bg-purple-600/20 transition">
           Comparison
         </button>
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-          Why Teams Choose <span className="text-purple-400">Rhinon</span>{" "}
-          Over Other Platforms
+          Why Teams Choose <span className="text-[#0E489F]">Rhinon</span> Over
+          Other Platforms
         </h2>
         <p className="text-gray-400 max-w-2xl mx-auto text-sm sm:text-base">
-          Compare how Rhinon stacks up against other customer engagement platforms.
+          Compare how Rhinon stacks up against other customer engagement
+          platforms.
         </p>
       </div>
 
@@ -128,7 +123,7 @@ export default function ComparisonSection() {
           <div className="grid grid-cols-4 min-w-[700px] text-left border border-gray-800 rounded-2xl overflow-hidden">
             {/* Header Row */}
             <div className="bg-black p-4 sm:p-6 font-semibold text-base sm:text-lg"></div>
-            <div className="bg-purple-900/30 text-purple-300 p-4 sm:p-6 font-semibold text-center text-base sm:text-lg">
+            <div className="bg-[#0E489F] text-white p-4 sm:p-6 font-semibold text-center text-base sm:text-lg">
               Rhinon
             </div>
             <div className="bg-gray-900 text-gray-300 p-4 sm:p-6 font-semibold text-center text-base sm:text-lg">
@@ -145,12 +140,12 @@ export default function ComparisonSection() {
                 className="col-span-4 grid grid-cols-4 border-t border-gray-800"
               >
                 {/* Feature Label */}
-                <div className="p-4 sm:p-5 text-gray-300 text-sm sm:text-xl font-bold">
+                <div className="p-4 sm:p-5 text-gray-300 text-sm sm:text-xl font-bold flex items-center justify-center">
                   {row.label}
                 </div>
 
                 {/* Rhinon Column */}
-                <div className="p-4 sm:p-5 flex justify-center items-center text-center bg-purple-900/20 text-gray-100 text-sm sm:text-base">
+                <div className="p-4 sm:p-5 flex justify-center items-center text-center bg-[#355b94] text-gray-100 text-sm sm:text-base">
                   {typeof row.rhinon === "string" ? (
                     <span>{row.rhinon}</span>
                   ) : (

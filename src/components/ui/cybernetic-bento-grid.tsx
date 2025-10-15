@@ -43,7 +43,7 @@ export const CyberneticBentoGrid = () => {
     <section className="bg-background relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="w-full max-w-6xl mx-auto z-10">
-          <h2 className="text-4xl sm:text-5xl font-bold text-center   bg-gradient-text-radial bg-clip-text text-transparent mb-8">
+          <h2 className="text-3xl sm:text-5xl font-bold text-center   bg-gradient-text-radial bg-clip-text text-transparent mb-8">
             Everything you need to engage, warmup, and convert your website
             leads at one place
           </h2>

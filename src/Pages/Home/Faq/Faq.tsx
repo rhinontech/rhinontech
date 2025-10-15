@@ -84,10 +84,10 @@ export default function Faq({
 
       <div className="mx-auto max-w-5xl">
         <header className="mb-8">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+           <h2 className="text-3xl font-bold tracking-wide text-balance md:text-4xl lg:text-4xl xl:text-5xl xl:font-bold text-center">
             {title}
           </h2>
-          <p className="mt-2 text-sm text-neutral-400 md:text-base">
+          <p className="mt-2 text-sm text-center text-neutral-400 md:text-base">
             {description}
           </p>
         </header>

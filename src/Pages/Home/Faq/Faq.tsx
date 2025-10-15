@@ -18,22 +18,48 @@ type FAQSectionProps = {
 
 const DEFAULT_FAQS: FAQ[] = [
   {
-    q: "What is your ERP’s deployment model?",
-    a: "We support cloud and on-prem deployments. You can migrate between them without losing data or customizations.",
+    q: "What is Rhinon?",
+    a: "Rhinon is an AI customer engagement platform that replaces your stack of chat, CRM, and support tools. It helps teams capture leads, automate customer support, and manage sales pipelines — all from one place.",
   },
   {
-    q: "How long does implementation take?",
-    a: "Typical go-live is 4–8 weeks depending on modules and integrations. We run staggered rollouts to minimize downtime.",
+    q: "How does Rhinon’s AI chatbot work?",
+    a: "Rhinon’s AI chatbot for websites uses your company data (via RAG) to answer customer questions, route leads to the right team, and engage visitors in real time. It supports multilingual, human-like conversations out of the box.",
   },
   {
-    q: "Is there role-based access control?",
-    a: "Yes. Roles, permissions, and data scopes are fully configurable. We also support SSO with major IdPs.",
+    q: "Who is Rhinon best suited for?",
+    a: "Rhinon is built for lean SaaS teams, early-stage startups, and online businesses that want to unify support, CRM, and marketing workflows without expensive tool stacks or complex integrations.",
   },
   {
-    q: "Do you offer customer support?",
-    a: "24/7 support with response-time SLAs. Dedicated success managers are available on Growth and Enterprise plans.",
+    q: "Can Rhinon integrate with our existing CRM or email tools?",
+    a: "Yes. Rhinon connects easily with popular CRMs and email systems, so your data and workflows stay in sync. It’s designed to plug into your tech stack with a single script or npm package. Contact sales for custom queries.",
+  },
+  {
+    q: "How is Rhinon different from other chatbots or support tools?",
+    a: "Most chatbots only answer basic queries. Rhinon goes further — combining AI support, CRM, campaign automation, and SEO analytics into one ecosystem, helping you turn customer interactions into conversions.",
+  },
+  {
+    q: "Does Rhinon help with lead generation and sales?",
+    a: "Yes. Rhinon includes AI-powered lead capture and qualification, campaign triggers (like behavior or exit intent), and email follow-ups that help your sales and marketing teams convert faster.",
+  },
+  {
+    q: "Is Rhinon easy to set up?",
+    a: "Absolutely. You can install Rhinon in under 10 minutes using one script. No dev-heavy setup or complex integrations required.",
+  },
+  {
+    q: "What about data privacy and security?",
+    a: "Rhinon follows strict data protection standards and allows you to control what customer and company data is used in AI training.",
+  },
+  {
+    q: "Does Rhinon support multilingual customer interactions?",
+    a: "Yes. Rhinon’s AI engine supports multiple languages, making it ideal for global teams that want to offer localized customer support.",
+  },
+  {
+    q: "What’s next on Rhinon’s roadmap?",
+    a: "We’re building voice-based support, advanced theming, and deeper analytics to make Rhinon the all-in-one layer for customer engagement and growth.",
   },
 ];
+
+
 
 export default function Faq({
   title = "Frequently Asked Questions",
@@ -46,7 +72,7 @@ export default function Faq({
   return (
     <section
       className={cn(
-        "relative w-full bg-neutral-950 text-neutral-100 px-4",
+        "relative w-full bg-neutral-950 text-neutral-100 px-4 pb-10",
         className
       )}
     >
@@ -58,10 +84,10 @@ export default function Faq({
 
       <div className="mx-auto max-w-5xl">
         <header className="mb-8">
-          <h2 className="text-3xl font-bold tracking-tight md:text-4xl">
+           <h2 className="text-3xl font-bold tracking-wide text-balance md:text-4xl lg:text-4xl xl:text-5xl xl:font-bold text-center">
             {title}
           </h2>
-          <p className="mt-2 text-sm text-neutral-400 md:text-base">
+          <p className="mt-2 text-sm text-center text-neutral-400 md:text-base">
             {description}
           </p>
         </header>

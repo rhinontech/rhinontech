@@ -126,9 +126,9 @@ export default function TestimonialsSection2() {
       {/* Header */}
       <div className="relative z-10 mx-auto max-w-5xl space-y-8">
         <div className="flex flex-col gap-2">
-          <h1 className="text-3xl font-bold tracking-wide text-balance md:text-4xl lg:text-4xl xl:text-5xl xl:font-bold text-center">
+          <h2 className="text-3xl font-bold tracking-wide text-balance md:text-4xl lg:text-4xl xl:text-5xl xl:font-bold text-center">
             Real Results, Real Voices
-          </h1>
+          </h2>
           <p className="text-sm text-neutral-400 md:text-base lg:text-lg text-center">
             See how businesses are thriving with our ERP — real stories, real impact, real growth.
           </p>

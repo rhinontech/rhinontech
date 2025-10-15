@@ -106,7 +106,7 @@ export default function ShimmerBadge() {
         )}
       >
         <span className="text-foreground text-sm">
-          Introducing Support for AI Models
+          AI Customer Engagement Platform
         </span>
 
         <span className="block h-4 w-0.5 border-l bg-white dark:bg-zinc-700"></span>

@@ -43,18 +43,18 @@ export const CyberneticBentoGrid = () => {
     <section className="bg-background relative overflow-hidden">
       <div className="container mx-auto px-6">
         <div className="w-full max-w-6xl mx-auto z-10">
-          <h2 className="text-4xl sm:text-5xl font-bold text-center mb-8  bg-gradient-text-radial bg-clip-text text-transparent">
-            Core Features
+          <h2 className="text-4xl sm:text-5xl font-bold text-center   bg-gradient-text-radial bg-clip-text text-transparent mb-8">
+            Everything you need to engage, warmup, and convert your website
+            leads at one place
           </h2>
           <div className="bento-grid">
             <BentoItem className="col-span-2 row-span-2 flex flex-col justify-between">
               <div>
                 <h2 className="text-2xl font-bold text-foreground">
-                  Real-time Analytics
+                  AI Support Chatbot
                 </h2>
                 <p className="mt-2 text-muted-foreground">
-                  Monitor your application's performance with up-to-the-second
-                  data streams and visualizations.
+                  Handles all customer queries across website
                 </p>
               </div>
               <div className="mt-4 h-48 bg-muted rounded-lg flex items-center justify-center text-muted-foreground">
@@ -62,39 +62,47 @@ export const CyberneticBentoGrid = () => {
               </div>
             </BentoItem>
             <BentoItem>
-              <h2 className="text-xl font-bold text-foreground">Global CDN</h2>
+              <h2 className="text-xl font-bold text-foreground">
+                Support Ticket Management
+              </h2>
               <p className="mt-2 text-muted-foreground text-sm">
-                Deliver content at lightning speed, no matter where your users
-                are.
-              </p>
-            </BentoItem>
-            <BentoItem className="row-span-2">
-              <h2 className="text-xl font-bold text-foreground">Secure Auth</h2>
-              <p className="mt-2 text-muted-foreground text-sm">
-                Enterprise-grade authentication and user management built-in.
+                Built-in ticketing system to organize and manage customer
+                support requests
               </p>
             </BentoItem>
             <BentoItem className="row-span-2">
               <h2 className="text-xl font-bold text-foreground">
-                Automated Backups
+                Smart Campaigns & Triggers
               </h2>
               <p className="mt-2 text-muted-foreground text-sm">
-                Your data is always safe with automated, redundant backups.
+                Targeted campaigns to engage website visitors based on
+                behavioral signals
+              </p>
+            </BentoItem>
+            <BentoItem className="row-span-2">
+              <h2 className="text-xl font-bold text-foreground">
+                Built-in CRM
+              </h2>
+              <p className="mt-2 text-muted-foreground text-sm">
+                Centralized CRM to manage all contacts, deals, and interactions
               </p>
             </BentoItem>
             <BentoItem className="col-span-2">
               <h2 className="text-xl font-bold text-foreground">
-                Serverless Functions
+                SEO Analytics
               </h2>
               <p className="mt-2 text-muted-foreground text-sm">
-                Run your backend code without managing servers. Scale infinitely
-                with ease.
+                Technical SEO monitoring and performance insights for the
+                connected website
               </p>
             </BentoItem>
             <BentoItem>
-              <h2 className="text-xl font-bold text-foreground">CLI Tool</h2>
+              <h2 className="text-xl font-bold text-foreground">
+                Knowledge Base & Custom Docs
+              </h2>
               <p className="mt-2 text-muted-foreground text-sm">
-                Manage your entire infrastructure from the command line.
+                Centralized repository of company documents and data for the
+                chatbot
               </p>
             </BentoItem>
           </div>

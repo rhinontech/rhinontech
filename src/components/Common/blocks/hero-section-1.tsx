@@ -80,12 +80,13 @@ export function HeroSection() {
             <div className="mx-auto max-w-5xl w-full px-4 p-6 backdrop-blur-lg rounded-2xl text-center">
               <AnimatedGroup variants={transitionVariants}>
                 <ShimmerBadge />
-                <h1 className="mt-8 max-w-4xl mx-auto bg-gradient-text-radial bg-clip-text text-transparent text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem] font-semibold pb-2.5">
-                  Modern Solutions for Customer Engagement
+                <h1 className="mt-8 max-w-5xl mx-auto bg-gradient-text-radial bg-clip-text text-transparent text-balance text-6xl md:text-7xl lg:mt-16 xl:text-[5.25rem] font-semibold pb-2.5">
+                  Rhinon is the only tool you need for customer engagement and
+                  growth
                 </h1>
                 <p className="mx-auto mt-8 max-w-2xl text-balance text-lg">
-                  Highly customizable components for building modern websites
-                  and applications that look and feel the way you mean it.
+                  Meet the AI system that unifies chat, CRM and support. Capture
+                  leads, resolve queries and grow faster
                 </p>
               </AnimatedGroup>
 
@@ -105,22 +106,6 @@ export function HeroSection() {
                 className="mt-12 flex flex-col md:flex-row items-center justify-center gap-2 w-full px-0 md:px-4"
               >
                 {/* First Button */}
-                <div key={1} className="w-full md:w-auto flex">
-                  <Button
-                    asChild
-                    size="lg"
-                    variant="ghost"
-                    className="flex-1 sm:w-full w-[300px]  h-10.5 rounded-xl px-5 border border-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
-                  >
-                    <Link href="#link">
-                      <span className="text-nowrap">
-                        Book a 15-min Live Install Demo
-                      </span>
-                    </Link>
-                  </Button>
-                </div>
-
-                {/* Second Button */}
                 <div
                   key={2}
                   className="w-full md:w-auto flex bg-foreground/10 rounded-[14px] border p-0.5 transition-all duration-300 hover:scale-105 hover:shadow-lg hover:bg-foreground/20"
@@ -131,9 +116,22 @@ export function HeroSection() {
                     className="flex-1 sm:w-full w-[300px] rounded-xl px-5 text-base bg-blue-900 text-white transition-all duration-300 hover:bg-blue-800 hover:text-white"
                   >
                     <Link href="#link">
-                      <span className="text-nowrap">
-                        Install & Try (10 min)
-                      </span>
+                      <span className="text-nowrap">Try for Free</span>
+                    </Link>
+                  </Button>
+                </div>
+
+                {/* Second Button */}
+
+                <div key={1} className="w-full md:w-auto flex">
+                  <Button
+                    asChild
+                    size="lg"
+                    variant="ghost"
+                    className="flex-1 sm:w-full w-[300px]  h-10.5 rounded-xl px-5 border border-white transition-all duration-300 hover:scale-105 hover:shadow-lg"
+                  >
+                    <Link href="#link">
+                      <span className="text-nowrap">Contact Sales</span>
                     </Link>
                   </Button>
                 </div>

@@ -47,10 +47,9 @@ const serviceLinks = [
 ];
 
 const policyLinks = [
-  { text: "Privacy Policy", href: "/privacy-policy" },
-  { text: "Terms & Conditions", href: "/terms-conditions" },
-  { text: "Security", href: "/security" },
-  { text: "Support", href: "/support" },
+  { text: "Terms & Conditions", href: "/terms-and-conditions" },
+  { text: "Refund Policy", href: "/refund-policy" },
+  { text: "Return Policy", href: "/return-policy" },
   { text: "Contact Sales", href: "/contact-sales" },
 ];
 

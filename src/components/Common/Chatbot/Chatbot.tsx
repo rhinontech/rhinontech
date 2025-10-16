@@ -4,7 +4,7 @@ import Rhinontech from '@rhinon/botsdk';
 export default function Chatbot() {
   useEffect(() => {
     Rhinontech({
-      app_id: 'MFGUKY'
+      app_id: '3CQDTA'
     });
   }, []);
 

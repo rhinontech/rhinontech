@@ -47,7 +47,7 @@ export function ServiceBrand() {
                         <motion.div
                             key={t.t}
                             onMouseEnter={() => setActive(i)}
-                            animate={{ flexGrow: isActive ? (window.innerWidth < 768 ? 6 : 5) : 1 }}
+                            animate={{ flexGrow: isActive ? (typeof window !== "undefined" && window.innerWidth < 768 ? 6 : 5) : 1 }}
                             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                             className="relative h-full min-w-0 cursor-pointer overflow-hidden rounded-2xl bg-white/5"
                             style={{ flexBasis: 0 }}

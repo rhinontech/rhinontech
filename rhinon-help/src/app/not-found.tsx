@@ -1,7 +1,8 @@
 import Link from "next/link";
-import { ArrowLeft, BookText, Home } from "lucide-react";
+import { BookText, Home } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { Button } from "@/components/ui/button";
+import { PRODUCTS, DEFAULT_TRACK } from "@/lib/products";
 
 export default function NotFound() {
   return (
@@ -33,10 +34,10 @@ export default function NotFound() {
             size="lg"
             className="h-10"
             nativeButton={false}
-            render={<Link href="/docs" />}
+            render={<Link href={`/${PRODUCTS[0].id}/${DEFAULT_TRACK}`} />}
           >
             <BookText />
-            Browse docs
+            Browse guides
           </Button>
         </div>
       </div>

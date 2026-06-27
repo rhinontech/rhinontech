@@ -50,7 +50,7 @@ export default function Footer() {
 
                 <div className="mt-12 md:mt-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-t border-white/10 pt-8 text-[11px] md:text-xs text-white/40">
                     <span>© 2026 Norvin Agency. All Rights Reserved.</span>
-                    <span>AWARD WINNING AGENCY — SINCE 2022</span>
+                    <span>AWARD WINNING AGENCY - SINCE 2022</span>
                 </div>
             </div>
         </footer>

@@ -8,11 +8,6 @@ import { Kbd } from "@/components/ui/kbd";
 import type { SearchDoc } from "@/lib/search";
 import { cn } from "@/lib/utils";
 
-const SECTION_LABEL: Record<string, string> = {
-  docs: "Documentation",
-  help: "Help Center",
-};
-
 export function CommandPalette({
   open,
   onOpenChange,
@@ -31,7 +26,7 @@ export function CommandPalette({
     const q = query.trim().toLowerCase();
     const pool = q
       ? index.filter((d) => q.split(/\s+/).every((t) => d.keywords.includes(t)))
-      : index.filter((d) => d.section === "docs").slice(0, 6);
+      : index.slice(0, 6);
     return pool.slice(0, 24);
   }, [query, index]);
 
@@ -128,7 +123,7 @@ export function CommandPalette({
                       )}
                     </span>
                     <span className="shrink-0 text-[0.7rem] uppercase tracking-wide text-muted-foreground">
-                      {SECTION_LABEL[r.section]}
+                      {r.spaceLabel}
                     </span>
                     {i === active && (
                       <CornerDownLeft className="size-3.5 shrink-0 text-muted-foreground" />

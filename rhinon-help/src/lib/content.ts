@@ -1,14 +1,16 @@
 /**
- * Content engine — GitBook-style markdown folder sync.
+ * Content engine - GitBook-style markdown folder sync.
  *
- * Content lives as a tree of `.md` / `.mdx` files under `content/<section>`.
+ * Content lives as a tree of `.md` / `.mdx` files under `content/<space>`,
+ * where a "space" is a `<product>/<track>` pair (see {@link ./products}).
  * Editing or adding a file updates the site: the sidebar nav, the routes and
  * the per-page "On this page" TOC are all derived from this tree at build time.
  *
  * Folder = a sidebar group (label/order configurable via an optional `meta.json`).
  * File   = a page. URL is the path relative to the section root, minus extension.
  *
- *   content/docs/getting-started/introduction.md  ->  /docs/getting-started/introduction
+ *   content/saleszium/guide/getting-started/quickstart.md
+ *     ->  /saleszium/guide/getting-started/quickstart
  *
  * This module is server-only (uses `fs`); never import it into a client component.
  */
@@ -16,8 +18,9 @@ import fs from "node:fs";
 import path from "node:path";
 import matter from "gray-matter";
 import GithubSlugger from "github-slugger";
+import type { Space } from "./products";
 
-export type Section = "docs" | "help";
+export type { Space };
 
 export type TocItem = {
   id: string;
@@ -36,10 +39,10 @@ export type Frontmatter = {
 };
 
 export type DocPage = {
-  section: Section;
-  /** slug segments, e.g. ["getting-started", "introduction"] */
+  space: Space;
+  /** slug segments, e.g. ["getting-started", "quickstart"] */
   slug: string[];
-  /** url path, e.g. "/docs/getting-started/introduction" */
+  /** url path, e.g. "/saleszium/guide/getting-started/quickstart" */
   href: string;
   title: string;
   description?: string;
@@ -82,8 +85,9 @@ type FolderMeta = {
 const CONTENT_ROOT = path.join(process.cwd(), "content");
 const EXTENSIONS = [".md", ".mdx"];
 
-function sectionDir(section: Section) {
-  return path.join(CONTENT_ROOT, section);
+/** Filesystem dir for a space. `space` may contain a "/" (product/track). */
+function spaceDir(space: Space) {
+  return path.join(CONTENT_ROOT, ...space.split("/"));
 }
 
 function exists(p: string) {
@@ -129,8 +133,8 @@ function readPageMeta(filePath: string) {
 }
 
 /** Resolve a slug (array of segments) to an actual file on disk. */
-function resolveFile(section: Section, slug: string[]): string | null {
-  const base = path.join(sectionDir(section), ...slug);
+function resolveFile(space: Space, slug: string[]): string | null {
+  const base = path.join(spaceDir(space), ...slug);
   // direct file: foo/bar.md
   for (const ext of EXTENSIONS) {
     if (exists(base + ext)) return base + ext;
@@ -148,7 +152,7 @@ function resolveFile(section: Section, slug: string[]): string | null {
 /* -------------------------------------------------------------------------- */
 
 function fileToNavItem(
-  section: Section,
+  space: Space,
   segments: string[],
   filePath: string
 ): NavItem {
@@ -156,7 +160,7 @@ function fileToNavItem(
   const last = segments[segments.length - 1];
   return {
     title: frontmatter.title ?? humanize(last),
-    href: "/" + [section, ...segments].join("/"),
+    href: "/" + [space, ...segments].join("/"),
     slug: segments,
   };
 }
@@ -170,8 +174,8 @@ function orderOf(filePath: string): number {
   }
 }
 
-export function getNavTree(section: Section): NavTree {
-  const dir = sectionDir(section);
+export function getNavTree(space: Space): NavTree {
+  const dir = spaceDir(space);
   if (!exists(dir)) return { rootItems: [], groups: [] };
 
   const entries = fs.readdirSync(dir, { withFileTypes: true });
@@ -185,7 +189,7 @@ export function getNavTree(section: Section): NavTree {
     .sort((a, b) => orderOf(a.file) - orderOf(b.file));
 
   const rootItems: NavItem[] = rootFiles.map((f) =>
-    fileToNavItem(section, [f.slug], f.file)
+    fileToNavItem(space, [f.slug], f.file)
   );
 
   const groups: NavGroup[] = entries
@@ -203,7 +207,7 @@ export function getNavTree(section: Section): NavTree {
         .sort((a, b) => orderOf(a.file) - orderOf(b.file));
 
       const items: NavItem[] = files.map((f) =>
-        fileToNavItem(section, [e.name, f.slug], f.file)
+        fileToNavItem(space, [e.name, f.slug], f.file)
       );
 
       return {
@@ -222,17 +226,17 @@ export function getNavTree(section: Section): NavTree {
 }
 
 /** Flattened, ordered page list for prev/next pagination. */
-export function getFlatPages(section: Section): NavItem[] {
-  const tree = getNavTree(section);
+export function getFlatPages(space: Space): NavItem[] {
+  const tree = getNavTree(space);
   return [...tree.rootItems, ...tree.groups.flatMap((g) => g.items)];
 }
 
 export function getPagerFor(
-  section: Section,
+  space: Space,
   slug: string[]
 ): { prev: NavItem | null; next: NavItem | null } {
-  const flat = getFlatPages(section);
-  const href = "/" + [section, ...slug].join("/");
+  const flat = getFlatPages(space);
+  const href = "/" + [space, ...slug].join("/");
   const idx = flat.findIndex((p) => p.href === href);
   if (idx === -1) return { prev: null, next: null };
   return {
@@ -276,7 +280,7 @@ function estimateReadingTime(markdown: string): number {
 }
 
 /**
- * Drop a leading `# Heading` from the body — the page chrome already renders
+ * Drop a leading `# Heading` from the body - the page chrome already renders
  * the title from frontmatter, so authors can write a natural H1 without it
  * showing up twice.
  */
@@ -284,27 +288,27 @@ function stripLeadingH1(markdown: string): string {
   return markdown.replace(/^\s*#\s+.+\n+/, "");
 }
 
-export function getDoc(section: Section, slug: string[]): DocPage | null {
+export function getDoc(space: Space, slug: string[]): DocPage | null {
   // empty slug -> section landing (index file or first page)
   let segments = slug;
-  let file = resolveFile(section, slug);
+  let file = resolveFile(space, slug);
 
   if (!file && slug.length === 0) {
-    const first = getFlatPages(section)[0];
+    const first = getFlatPages(space)[0];
     if (!first) return null;
     segments = first.slug;
-    file = resolveFile(section, first.slug);
+    file = resolveFile(space, first.slug);
   }
   if (!file) return null;
 
   const { frontmatter, content } = readPageMeta(file);
-  const last = segments[segments.length - 1] ?? section;
+  const last = segments[segments.length - 1] ?? space;
   const body = stripLeadingH1(content);
 
   return {
-    section,
+    space,
     slug: segments,
-    href: "/" + [section, ...segments].join("/"),
+    href: "/" + [space, ...segments].join("/"),
     title: frontmatter.title ?? humanize(last),
     description: frontmatter.description,
     frontmatter,
@@ -314,8 +318,8 @@ export function getDoc(section: Section, slug: string[]): DocPage | null {
   };
 }
 
-/** All slugs in a section, for generateStaticParams. */
-export function getAllSlugs(section: Section): string[][] {
+/** All slugs in a space, for generateStaticParams. */
+export function getAllSlugs(space: Space): string[][] {
   const walk = (dir: string, prefix: string[]): string[][] => {
     if (!exists(dir)) return [];
     const out: string[][] = [];
@@ -329,27 +333,27 @@ export function getAllSlugs(section: Section): string[][] {
     }
     return out;
   };
-  return walk(sectionDir(section), []);
+  return walk(spaceDir(space), []);
 }
 
-/** Help-center categories = top-level folders, surfaced as cards. */
-export function getHelpCategories(): NavGroup[] {
-  return getNavTree("help").groups;
+/** Top-level folders of a space, surfaced as category cards on a landing page. */
+export function getCategories(space: Space): NavGroup[] {
+  return getNavTree(space).groups;
 }
 
-/** Featured pages across a section, for "popular articles" on hubs. */
-export function getFeatured(section: Section, limit = 6): NavItem[] {
-  const dir = sectionDir(section);
+/** Featured pages across a space, for "popular articles" on hubs. */
+export function getFeatured(space: Space, limit = 6): NavItem[] {
+  const dir = spaceDir(space);
   if (!exists(dir)) return [];
   const featured: NavItem[] = [];
-  for (const slug of getAllSlugs(section)) {
-    const file = resolveFile(section, slug);
+  for (const slug of getAllSlugs(space)) {
+    const file = resolveFile(space, slug);
     if (!file) continue;
     const { frontmatter } = readPageMeta(file);
     if (frontmatter.featured) {
       featured.push({
         title: frontmatter.title ?? humanize(slug[slug.length - 1] ?? ""),
-        href: "/" + [section, ...slug].join("/"),
+        href: "/" + [space, ...slug].join("/"),
         slug,
       });
     }

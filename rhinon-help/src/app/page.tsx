@@ -1,26 +1,30 @@
 import Link from "next/link";
-import { ArrowRight, BookText, LifeBuoy, MessageCircle } from "lucide-react";
+import { ArrowRight, LifeBuoy, MessageCircle } from "lucide-react";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { Footer } from "@/components/layout/Footer";
 import { CategoryCard } from "@/components/CategoryCard";
 import { HomeSearch } from "@/components/home/HomeSearch";
 import { PopularArticles } from "@/components/home/PopularArticles";
 import { Button } from "@/components/ui/button";
-import { getHelpCategories, getFeatured } from "@/lib/content";
-
-const POPULAR_SEARCHES = [
-  { label: "Reset password", href: "/help/account/reset-password" },
-  { label: "Plans & billing", href: "/help/billing/plans" },
-  { label: "Quickstart", href: "/docs/getting-started/quickstart" },
-  { label: "Common errors", href: "/help/troubleshooting/common-errors" },
-];
+import { getAllSlugs, getFeatured } from "@/lib/content";
+import { PRODUCTS, DEFAULT_TRACK, spaceId } from "@/lib/products";
 
 export default function HomePage() {
-  const helpCategories = getHelpCategories();
-  const featured = [
-    ...getFeatured("help", 4),
-    ...getFeatured("docs", 2),
-  ].slice(0, 6);
+  const productCards = PRODUCTS.map((p) => {
+    const space = spaceId(p.id, DEFAULT_TRACK);
+    return {
+      id: p.id,
+      title: p.name,
+      description: p.tagline,
+      icon: p.icon,
+      href: `/${p.id}/${DEFAULT_TRACK}`,
+      count: getAllSlugs(space).length,
+    };
+  });
+
+  const featured = PRODUCTS.flatMap((p) =>
+    getFeatured(spaceId(p.id, DEFAULT_TRACK), 2)
+  ).slice(0, 6);
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -39,22 +43,21 @@ export default function HomePage() {
               <span className="text-gradient">How can we help?</span>
             </h1>
             <p className="animate-fade-up mx-auto mt-5 max-w-xl text-lg leading-8 text-muted-foreground text-balance">
-              Search our knowledge base, browse a category, or dive into the
-              developer documentation — everything you need to build, integrate
-              and ship.
+              Pick a product to explore its complete guide - what it does, how it
+              works, and how to get the most out of it.
             </p>
 
             <div className="animate-fade-up mt-9">
               <HomeSearch />
               <div className="mt-4 flex flex-wrap items-center justify-center gap-2 text-sm">
-                <span className="text-muted-foreground">Popular:</span>
-                {POPULAR_SEARCHES.map((s) => (
+                <span className="text-muted-foreground">Products:</span>
+                {PRODUCTS.map((p) => (
                   <Link
-                    key={s.href}
-                    href={s.href}
+                    key={p.id}
+                    href={`/${p.id}/${DEFAULT_TRACK}`}
                     className="rounded-full border border-border bg-card/40 px-3 py-1 text-xs text-muted-foreground transition-colors hover:border-foreground/20 hover:text-foreground"
                   >
-                    {s.label}
+                    {p.name}
                   </Link>
                 ))}
               </div>
@@ -62,69 +65,37 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* Browse by category */}
+        {/* Browse by product */}
         <section className="mx-auto max-w-[1100px] px-6 py-16">
           <SectionHeading
-            title="Browse by category"
-            subtitle="Find answers grouped by topic."
+            title="Browse by product"
+            subtitle="Documentation for every product under Rhinon Tech."
           />
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {helpCategories.map((c) => (
+            {productCards.map((c) => (
               <CategoryCard
-                key={c.slug}
-                href={`/help/${c.slug}`}
+                key={c.id}
+                href={c.href}
                 icon={c.icon}
-                title={c.label}
+                title={c.title}
                 description={c.description}
-                count={c.items.length}
+                count={c.count}
+                countLabel="pages"
               />
             ))}
           </div>
         </section>
 
-        {/* Developer documentation banner */}
-        <section className="mx-auto max-w-[1100px] px-6 pb-16">
-          <div className="ambient-glow relative overflow-hidden rounded-3xl border border-border bg-card/40 ring-hairline">
-            <div className="bg-dots absolute inset-0 opacity-40" />
-            <div className="relative flex flex-col items-start gap-6 p-8 md:flex-row md:items-center md:justify-between md:p-10">
-              <div className="flex items-start gap-5">
-                <span className="inline-flex size-12 shrink-0 items-center justify-center rounded-2xl bg-foreground text-background">
-                  <BookText className="size-6" />
-                </span>
-                <div>
-                  <span className="text-xs font-medium uppercase tracking-wider text-muted-foreground">
-                    For builders
-                  </span>
-                  <h2 className="mt-1 font-heading text-2xl font-bold tracking-tight">
-                    Developer documentation
-                  </h2>
-                  <p className="mt-1.5 max-w-md text-sm leading-6 text-muted-foreground">
-                    API references, SDK guides and step-by-step tutorials to
-                    integrate Rhinon into your stack.
-                  </p>
-                </div>
-              </div>
-              <Button
-                size="lg"
-                className="h-10 shrink-0"
-                nativeButton={false}
-                render={<Link href="/docs" />}
-              >
-                Browse documentation
-                <ArrowRight />
-              </Button>
-            </div>
-          </div>
-        </section>
-
         {/* Popular articles */}
-        <section className="mx-auto max-w-[1100px] px-6 pb-16">
-          <SectionHeading
-            title="Popular articles"
-            subtitle="The pages teams reach for most."
-          />
-          <PopularArticles items={featured} />
-        </section>
+        {featured.length > 0 && (
+          <section className="mx-auto max-w-[1100px] px-6 pb-16">
+            <SectionHeading
+              title="Popular articles"
+              subtitle="The pages teams reach for most."
+            />
+            <PopularArticles items={featured} />
+          </section>
+        )}
 
         {/* Contact CTA */}
         <section className="mx-auto max-w-[1100px] px-6 pb-24">
@@ -153,9 +124,9 @@ export default function HomePage() {
                   size="lg"
                   className="h-10"
                   nativeButton={false}
-                  render={<Link href="/docs" />}
+                  render={<Link href={`/${PRODUCTS[0].id}/${DEFAULT_TRACK}`} />}
                 >
-                  Read the docs
+                  Explore the guides
                   <ArrowRight />
                 </Button>
               </div>

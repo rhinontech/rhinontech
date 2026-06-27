@@ -1,10 +1,10 @@
 /**
- * Auth seam — private/invite-only gate.
+ * Auth seam - private/invite-only gate.
  *
  * The real authentication backend is TBD; this file is the single place that
  * decides "is this request allowed in?". When the backend is ready, swap the
  * body of `hasValidSession` (and flip GATE_ENABLED on) and nothing else needs
- * to change — `proxy.ts` and the login page already route through here.
+ * to change - `proxy.ts` and the login page already route through here.
  */
 
 /** Cookie that will carry the session token once the backend is wired up. */

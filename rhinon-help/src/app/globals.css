@@ -49,7 +49,7 @@
 }
 
 /*
-  Rhinon Help — dark premium monochrome palette.
+  Rhinon Help - dark premium monochrome palette.
   Dark-only product: :root carries the same values as .dark so there is never a
   light flash, and base-nova's dark: variants still resolve via the .dark class
   on <html>. Pure grayscale (no hue) for a high-end, developer-platform feel.
@@ -141,7 +141,7 @@
 }
 
 /* ---------------------------------------------------------------------------
-   Premium utilities — glass, ambient light, grid, gradients
+   Premium utilities - glass, ambient light, grid, gradients
 --------------------------------------------------------------------------- */
 @layer utilities {
   /* Frosted glass surface (header, command palette, floating cards) */
@@ -222,7 +222,7 @@
 }
 
 /* ---------------------------------------------------------------------------
-   .docs-content — premium typographic scope for rendered markdown
+   .docs-content - premium typographic scope for rendered markdown
 --------------------------------------------------------------------------- */
 @layer components {
   .docs-content {
@@ -364,7 +364,7 @@
     @apply bg-foreground ring-foreground/20;
   }
 
-  /* Steps — author with an ordered list inside <div class="steps"> or use ::: */
+  /* Steps - author with an ordered list inside <div class="steps"> or use ::: */
   .docs-content .steps {
     @apply ml-1 border-l border-border pl-7;
     counter-reset: step;

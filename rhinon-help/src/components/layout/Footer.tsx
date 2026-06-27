@@ -1,21 +1,21 @@
 import Link from "next/link";
 import { Logo } from "@/components/Logo";
+import { PRODUCTS, DEFAULT_TRACK } from "@/lib/products";
 
 const COLUMNS = [
   {
-    title: "Documentation",
-    links: [
-      { label: "Getting Started", href: "/docs/getting-started/introduction" },
-      { label: "Guides", href: "/docs/guides/authentication" },
-      { label: "Quickstart", href: "/docs/getting-started/quickstart" },
-    ],
+    title: "Products",
+    links: PRODUCTS.map((p) => ({
+      label: p.name,
+      href: `/${p.id}/${DEFAULT_TRACK}`,
+    })),
   },
   {
-    title: "Help Center",
+    title: "Support",
     links: [
-      { label: "Account & Access", href: "/help/account" },
-      { label: "Billing & Plans", href: "/help/billing" },
-      { label: "Troubleshooting", href: "/help/troubleshooting" },
+      { label: "Help Center", href: "/" },
+      { label: "Contact Support", href: "mailto:support@rhinon.tech" },
+      { label: "System Status", href: "https://status.rhinon.tech" },
     ],
   },
   {
@@ -23,7 +23,6 @@ const COLUMNS = [
     links: [
       { label: "Rhinon.tech", href: "https://rhinon.tech" },
       { label: "Dashboard", href: "https://app.rhinon.tech" },
-      { label: "Status", href: "https://status.rhinon.tech" },
     ],
   },
 ];

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 
 /**
- * Invite-only access screen — UI seam.
+ * Invite-only access screen - UI seam.
  *
  * TODO(backend): replace `handleSubmit` / `handleSso` with calls to the Rhinon
  * auth backend (send magic link / start SSO). On success the backend sets the

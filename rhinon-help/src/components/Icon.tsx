@@ -11,6 +11,18 @@ import {
   KeyRound,
   BookText,
   Sparkles,
+  MessageSquare,
+  PawPrint,
+  FlaskConical,
+  Users,
+  Workflow,
+  Compass,
+  HeartPulse,
+  Code,
+  Cpu,
+  Palette,
+  Cloud,
+  Server,
   type LucideIcon,
 } from "lucide-react";
 
@@ -31,6 +43,18 @@ const REGISTRY: Record<string, LucideIcon> = {
   KeyRound,
   BookText,
   Sparkles,
+  MessageSquare,
+  PawPrint,
+  FlaskConical,
+  Users,
+  Workflow,
+  Compass,
+  HeartPulse,
+  Code,
+  Cpu,
+  Palette,
+  Cloud,
+  Server,
 };
 
 export function Icon({

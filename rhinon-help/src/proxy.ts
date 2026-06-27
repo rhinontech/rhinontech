@@ -9,7 +9,7 @@ import {
 /**
  * Private gate (Next 16 `proxy`, formerly `middleware`).
  * Redirects unauthenticated requests to /login. Disabled until the auth
- * backend is wired up — see `src/lib/auth.ts`.
+ * backend is wired up - see `src/lib/auth.ts`.
  */
 export function proxy(request: NextRequest) {
   if (!GATE_ENABLED) return NextResponse.next();

@@ -14,13 +14,20 @@ import {
 } from "@/components/ui/sheet";
 import { SearchTrigger, SearchIconButton } from "@/components/search/SearchTrigger";
 import { cn } from "@/lib/utils";
+import { PRODUCTS, DEFAULT_TRACK, DEFAULT_CTA } from "@/lib/products";
 
-const NAV = [{ label: "Documentation", href: "/docs" }];
+const NAV = PRODUCTS.map((p) => ({
+  id: p.id,
+  label: p.name,
+  href: `/${p.id}/${DEFAULT_TRACK}`,
+}));
 
 export function SiteHeader({ startSlot }: { startSlot?: React.ReactNode }) {
   const pathname = usePathname();
-  const isActive = (href: string) =>
-    pathname === href || pathname.startsWith(href + "/");
+  const isActiveProduct = (id: string) =>
+    pathname === `/${id}` || pathname.startsWith(`/${id}/`);
+
+  const cta = PRODUCTS.find((p) => isActiveProduct(p.id))?.cta ?? DEFAULT_CTA;
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-border glass">
@@ -35,7 +42,7 @@ export function SiteHeader({ startSlot }: { startSlot?: React.ReactNode }) {
               href={item.href}
               className={cn(
                 "rounded-lg px-3 py-1.5 text-sm font-medium transition-colors",
-                isActive(item.href)
+                isActiveProduct(item.id)
                   ? "bg-foreground/10 text-foreground"
                   : "text-muted-foreground hover:bg-foreground/5 hover:text-foreground"
               )}
@@ -55,10 +62,10 @@ export function SiteHeader({ startSlot }: { startSlot?: React.ReactNode }) {
             nativeButton={false}
             className="hidden h-9 sm:inline-flex"
             render={
-              <a href="https://app.rhinon.tech" target="_blank" rel="noreferrer" />
+              <a href={cta.href} target="_blank" rel="noreferrer" />
             }
           >
-            Dashboard
+            {cta.label}
             <ArrowUpRight />
           </Button>
 
@@ -80,7 +87,7 @@ export function SiteHeader({ startSlot }: { startSlot?: React.ReactNode }) {
                     href={item.href}
                     className={cn(
                       "rounded-lg px-3 py-2.5 text-sm font-medium transition-colors",
-                      isActive(item.href)
+                      isActiveProduct(item.id)
                         ? "bg-foreground/10 text-foreground"
                         : "text-muted-foreground hover:bg-foreground/5 hover:text-foreground"
                     )}
@@ -89,12 +96,12 @@ export function SiteHeader({ startSlot }: { startSlot?: React.ReactNode }) {
                   </Link>
                 ))}
                 <a
-                  href="https://app.rhinon.tech"
+                  href={cta.href}
                   target="_blank"
                   rel="noreferrer"
                   className="mt-2 flex items-center gap-1 rounded-lg px-3 py-2.5 text-sm font-medium text-foreground hover:bg-foreground/5"
                 >
-                  Dashboard <ArrowUpRight className="size-4" />
+                  {cta.label} <ArrowUpRight className="size-4" />
                 </a>
               </div>
             </SheetContent>

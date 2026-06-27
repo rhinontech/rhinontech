@@ -23,7 +23,7 @@ const outfit = Outfit({
 
 export const metadata: Metadata = {
   title: {
-    default: "Rhinon Help — Documentation & Support",
+    default: "Rhinon Help - Documentation & Support",
     template: "%s · Rhinon Help",
   },
   description:

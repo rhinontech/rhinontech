@@ -1,0 +1,6 @@
+{
+  "label": "Guides",
+  "order": 2,
+  "icon": "BookOpen",
+  "description": "Task-focused walkthroughs for authentication, webhooks and more."
+}

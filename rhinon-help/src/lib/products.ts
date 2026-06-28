@@ -63,7 +63,7 @@ export const PRODUCTS: ProductMeta[] = [
     description:
       "AI chatbots, live chat, WhatsApp & email, CRM, sales pipeline, automation and campaigns - one platform to capture, engage and convert customers.",
     icon: "MessageSquare",
-    tracks: ["guide"],
+    tracks: ["guide", "developers"],
     cta: { label: "Dashboard", href: "https://app.saleszium.com/auth/login" },
   },
   {
@@ -73,7 +73,7 @@ export const PRODUCTS: ProductMeta[] = [
     description:
       "A pet-first social network, a complete digital health passport, and a local community for playdates, adoption and vet discovery - in one app.",
     icon: "PawPrint",
-    tracks: ["guide"],
+    tracks: ["guide", "developers"],
     cta: { label: "Website", href: "https://furrcircle.com" },
   },
   {
@@ -83,7 +83,7 @@ export const PRODUCTS: ProductMeta[] = [
     description:
       "A founder-led studio that designs, builds, deploys and supports digital products end to end - web, mobile, AI, automation and cloud - across JavaScript, Python and any stack your idea needs.",
     icon: "FlaskConical",
-    tracks: ["guide"],
+    tracks: ["guide", "developers"],
     cta: { label: "Website", href: "https://rhinonlabs.com" },
   },
 ];

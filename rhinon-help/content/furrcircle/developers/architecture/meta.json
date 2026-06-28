@@ -1,0 +1,6 @@
+{
+  "label": "Architecture",
+  "order": 2,
+  "icon": "Cpu",
+  "description": "Auth, the data model, realtime, storage and push."
+}

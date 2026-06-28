@@ -1,0 +1,6 @@
+{
+  "label": "Getting Started",
+  "order": 1,
+  "icon": "Rocket",
+  "description": "Run the backend and the mobile app locally."
+}

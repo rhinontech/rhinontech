@@ -13,6 +13,7 @@ import {
   SheetTitle,
 } from "@/components/ui/sheet";
 import { SearchTrigger, SearchIconButton } from "@/components/search/SearchTrigger";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { cn } from "@/lib/utils";
 import { PRODUCTS, DEFAULT_TRACK, DEFAULT_CTA } from "@/lib/products";
 
@@ -55,6 +56,8 @@ export function SiteHeader({ startSlot }: { startSlot?: React.ReactNode }) {
         <div className="ml-auto flex items-center gap-2">
           <SearchTrigger className="hidden w-64 lg:flex" />
           <SearchIconButton className="lg:hidden" />
+
+          <ThemeToggle />
 
           <Button
             variant="outline"

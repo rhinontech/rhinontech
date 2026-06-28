@@ -3,6 +3,7 @@ import { Geist, Geist_Mono, Outfit } from "next/font/google";
 import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { SearchProvider } from "@/components/search/SearchProvider";
+import { ThemeScript } from "@/components/theme/ThemeScript";
 import { getSearchIndex } from "@/lib/search";
 
 const geistSans = Geist({
@@ -41,10 +42,11 @@ export default function RootLayout({
     <html
       lang="en"
       data-scroll-behavior="smooth"
-      className={`dark ${geistSans.variable} ${geistMono.variable} ${outfit.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${outfit.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <body className="min-h-full flex flex-col bg-background text-foreground">
+        <ThemeScript />
         <TooltipProvider>
           <SearchProvider index={searchIndex}>{children}</SearchProvider>
         </TooltipProvider>

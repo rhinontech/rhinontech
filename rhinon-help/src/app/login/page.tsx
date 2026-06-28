@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
+import { Suspense } from "react";
 import { Logo } from "@/components/Logo";
 import { LoginForm } from "@/components/auth/LoginForm";
 
 export const metadata: Metadata = {
   title: "Sign in",
-  description: "Sign in to the private Rhinon Help center.",
+  description: "Sign in to the Rhinon developer documentation.",
 };
 
 export default function LoginPage() {
@@ -20,14 +21,17 @@ export default function LoginPage() {
         <div className="rounded-3xl border border-border bg-card/60 p-8 glass-strong ring-hairline">
           <div className="mb-7 text-center">
             <h1 className="font-heading text-2xl font-bold tracking-tight">
-              Welcome back
+              Developer docs
             </h1>
             <p className="mt-1.5 text-sm text-muted-foreground">
-              Sign in to access documentation and support.
+              Enter your email to access the developer documentation. The public
+              guides don&rsquo;t need a sign-in.
             </p>
           </div>
 
-          <LoginForm />
+          <Suspense fallback={null}>
+            <LoginForm />
+          </Suspense>
         </div>
 
         <p className="mt-6 text-center text-xs text-muted-foreground">

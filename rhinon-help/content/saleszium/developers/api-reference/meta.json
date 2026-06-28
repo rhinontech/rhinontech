@@ -1,0 +1,6 @@
+{
+  "label": "API Reference",
+  "order": 3,
+  "icon": "Webhook",
+  "description": "Endpoints by resource — chatbot, conversations, tickets, CRM and more."
+}

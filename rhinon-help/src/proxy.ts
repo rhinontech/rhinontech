@@ -3,24 +3,31 @@ import {
   GATE_ENABLED,
   PUBLIC_PATHS,
   SESSION_COOKIE,
-  hasValidSession,
+  isDeveloperDocsPath,
+  verifySession,
 } from "@/lib/auth";
 
 /**
- * Private gate (Next 16 `proxy`, formerly `middleware`).
- * Redirects unauthenticated requests to /login. Disabled until the auth
- * backend is wired up - see `src/lib/auth.ts`.
+ * Access gate (Next 16 `proxy`, formerly `middleware`).
+ *
+ * Public guides stay open. Developer docs (`/<product>/developers/...`) require
+ * a valid signed session — unauthenticated requests are redirected to /login.
+ * Set NEXT_PUBLIC_GATE_ENABLED=true to gate the whole site instead.
  */
-export function proxy(request: NextRequest) {
-  if (!GATE_ENABLED) return NextResponse.next();
-
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+
+  // Always allow the login screen (and any other public paths).
   if (PUBLIC_PATHS.some((p) => pathname === p || pathname.startsWith(p + "/"))) {
     return NextResponse.next();
   }
 
+  const needsAuth = GATE_ENABLED || isDeveloperDocsPath(pathname);
+  if (!needsAuth) return NextResponse.next();
+
   const token = request.cookies.get(SESSION_COOKIE)?.value;
-  if (hasValidSession(token)) return NextResponse.next();
+  const session = await verifySession(token);
+  if (session) return NextResponse.next();
 
   const url = request.nextUrl.clone();
   url.pathname = "/login";

@@ -6,11 +6,11 @@ import { Plus } from "lucide-react";
 import Reveal from "./Reveal";
 
 const FAQS = [
-    { q: "How to request a design?", a: "Simple and straightforward. Just submit your request through our platform with all the details you have." },
-    { q: "Speed of design delivery?", a: "How quick is quick? For most design, we're talking 2-3 business days. We balance speed with quality, ensuring you get top-north design swiftly." },
-    { q: "In which program do you create designs?", a: "We primarily design using industry-standard tools like Figma. This ensures flexibility, easy collaboration, and clean handoffs for development." },
-    { q: "Why's Norvin instead of full-time designer?", a: "Norvin gives you flexibility without the overhead. You get high-quality design work on demand, without hiring, training, or long-term commitments." },
-    { q: "What if i don't like design?", a: "No worries at all. We work iteratively and welcome feedback at every step. If something doesn't feel right, we refine it until it does." },
+    { q: "What is Rhinon Tech?", a: "A technology company that builds and operates its own house of products — Saleszium, Furrcircle and Rhinon Labs, with more on the way. We're the parent; each product has its own identity." },
+    { q: "What products do you build?", a: "Saleszium (customer engagement & sales), Furrcircle (the app for pet parents) and Rhinon Labs (our product studio) — plus new products in active development." },
+    { q: "Is Rhinon Labs part of Rhinon Tech?", a: "Yes — Rhinon Labs is our in-house product studio and one of the ventures in the house. It runs with its own identity at rhinonlabs.com." },
+    { q: "Do you take on outside projects?", a: "Rhinon Tech builds its own products. Client work is handled by Rhinon Labs — head to rhinonlabs.com to talk to the studio." },
+    { q: "Where are you based?", a: "Bhubaneswar, Odisha, India — building for users everywhere." },
 ];
 
 export default function Faqs() {

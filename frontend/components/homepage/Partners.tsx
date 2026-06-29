@@ -4,13 +4,13 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const PARTNERS = [
-  { n: "Iva", y: "2020", logo: "https://framerusercontent.com/images/HNfkQRfxtFK3Miudpvq7xAUe2E.svg", body: "Accelerated their market entry by over 40% in six months.", colStart: "lg:col-start-1" },
-  { n: "Fin", y: "2023", logo: "https://framerusercontent.com/images/r4pCfxmza1YC7R9fAcNWA0pG0.svg", body: "Boosted green energy adoption with a data-driven ecosystem.", colStart: "lg:col-start-2" },
-  { n: "Aws", y: "2024", logo: "https://framerusercontent.com/images/rJ0KiiIZday3Hvz7riIhnX251Kc.svg", body: "Digital transformation projects delivered for global enterprises.", colStart: "lg:col-start-3" },
-  { n: "Ups", y: "2025", logo: "https://framerusercontent.com/images/YsQeCCtd7ah144yKBrjXBJsNY.svg", body: "Doubled active user retention rates, reached 1m+ monthly logins.", colStart: "lg:col-start-5" },
-  { n: "SAP", y: "2022", logo: "https://framerusercontent.com/images/kqPiqaKsSgKuvYdcbQp6ZXHUys.svg", body: "Expanded digital reach across 25+ new regional markets.", colStart: "lg:col-start-2" },
-  { n: "GG", y: "2020", logo: "https://framerusercontent.com/images/WtIbCsJOWJeepLURPZ5tlaLNTf8.svg", body: "Reduced operational overhead by 20% using automated systems.", colStart: "lg:col-start-4" },
-  { n: "LG", y: "2025", logo: "https://framerusercontent.com/images/ppOuoZRinmdRP58aEZUx0yQ9WyY.svg", body: "Boosted sustainable energy adoption by 30% via data ecosystems.", colStart: "lg:col-start-5" },
+  { n: "AWS", y: "cloud", logo: "https://framerusercontent.com/images/HNfkQRfxtFK3Miudpvq7xAUe2E.svg", body: "Cloud infrastructure, storage and email that scales with your product.", colStart: "lg:col-start-1" },
+  { n: "Next", y: "web", logo: "https://framerusercontent.com/images/r4pCfxmza1YC7R9fAcNWA0pG0.svg", body: "Next.js & React for fast, modern web applications.", colStart: "lg:col-start-2" },
+  { n: "Node", y: "api", logo: "https://framerusercontent.com/images/rJ0KiiIZday3Hvz7riIhnX251Kc.svg", body: "Node.js & Express services and APIs that power our products.", colStart: "lg:col-start-3" },
+  { n: "Py", y: "data", logo: "https://framerusercontent.com/images/YsQeCCtd7ah144yKBrjXBJsNY.svg", body: "Python for data, ML and AI-heavy services (FastAPI, Django).", colStart: "lg:col-start-5" },
+  { n: "PG", y: "db", logo: "https://framerusercontent.com/images/kqPiqaKsSgKuvYdcbQp6ZXHUys.svg", body: "PostgreSQL & pgvector for relational data and embeddings.", colStart: "lg:col-start-2" },
+  { n: "RN", y: "mobile", logo: "https://framerusercontent.com/images/WtIbCsJOWJeepLURPZ5tlaLNTf8.svg", body: "React Native & Expo for cross-platform mobile apps.", colStart: "lg:col-start-4" },
+  { n: "AI", y: "llm", logo: "https://framerusercontent.com/images/ppOuoZRinmdRP58aEZUx0yQ9WyY.svg", body: "LLMs & RAG (Claude, OpenAI) for agents and assistants.", colStart: "lg:col-start-5" },
 ];
 
 export default function Partners() {
@@ -20,10 +20,10 @@ export default function Partners() {
       <div className="flex flex-col gap-6">
         <div className="inline-flex w-fit items-center gap-2 rounded-full border border-white/10 bg-white/5 px-3.5 py-1 text-xs text-white/80">
           <span className="size-1.5 rounded-full bg-white" />
-          Global Partners
+          Technology
         </div>
         <h2 className="font-display text-4xl sm:text-6xl md:text-[5.5rem] md:leading-none font-semibold tracking-tight text-white">
-          Partners
+          Built with
         </h2>
       </div>
 

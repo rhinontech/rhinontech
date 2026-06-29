@@ -5,20 +5,20 @@ import { motion, useMotionValue, useAnimationFrame } from "framer-motion";
 import Reveal from "./Reveal";
 
 const RECOGS = [
-    { img: "https://framerusercontent.com/images/QGWM2wh1FhSXwwCgj5OwfMJELRM.png", name: "NOVACORE STUDIO", desc: "Brand Advisory" },
-    { img: "https://framerusercontent.com/images/WDx7bTWoPj1VrQwYMPTL8JdhaQA.png", name: "LOGO COMPANY", desc: "Envato Author" },
-    { img: "https://framerusercontent.com/images/wK2FhKYSAKcCoeCO2CHsoSX506Y.png", name: "FLUORESCENT", desc: "Best Selling Author" },
-    { img: "https://framerusercontent.com/images/z3EVlv7PJ0r24sAph7fO38AhDg.png", name: "FWA HIGHLIGHT", desc: "Cutting-edge Web" },
-    { img: "https://framerusercontent.com/images/5Jxk2EPVsxFPOX50Ru6ZIaPKQoY.png", name: "AWWWARDS", desc: "High-Performance Interface" },
-    { img: "https://framerusercontent.com/images/hLfcbhtQAGM0iFbLcbEfMViSi0.png", name: "FT FEATURED", desc: "Innovative Digital Layout" },
-    { img: "https://framerusercontent.com/images/T93AD43QxOG2hwxPNyxgo7pI.png", name: "FUTURE VISIONARY", desc: "Scalable Digital Systems" },
-    { img: "https://framerusercontent.com/images/QGWM2wh1FhSXwwCgj5OwfMJELRM.png", name: "NOVACORE STUDIO", desc: "Brand Advisory" },
-    { img: "https://framerusercontent.com/images/WDx7bTWoPj1VrQwYMPTL8JdhaQA.png", name: "LOGO COMPANY", desc: "Envato Author" },
-    { img: "https://framerusercontent.com/images/wK2FhKYSAKcCoeCO2CHsoSX506Y.png", name: "FLUORESCENT", desc: "Best Selling Author" },
-    { img: "https://framerusercontent.com/images/z3EVlv7PJ0r24sAph7fO38AhDg.png", name: "FWA HIGHLIGHT", desc: "Cutting-edge Web" },
-    { img: "https://framerusercontent.com/images/5Jxk2EPVsxFPOX50Ru6ZIaPKQoY.png", name: "AWWWARDS", desc: "High-Performance Interface" },
-    { img: "https://framerusercontent.com/images/hLfcbhtQAGM0iFbLcbEfMViSi0.png", name: "FT FEATURED", desc: "Innovative Digital Layout" },
-    { img: "https://framerusercontent.com/images/T93AD43QxOG2hwxPNyxgo7pI.png", name: "FUTURE VISIONARY", desc: "Scalable Digital Systems" },
+    { img: "https://framerusercontent.com/images/QGWM2wh1FhSXwwCgj5OwfMJELRM.png", name: "PRODUCT ENGINEERING", desc: "Web, mobile & SaaS" },
+    { img: "https://framerusercontent.com/images/WDx7bTWoPj1VrQwYMPTL8JdhaQA.png", name: "AI & AUTOMATION", desc: "Agents, RAG & workflows" },
+    { img: "https://framerusercontent.com/images/wK2FhKYSAKcCoeCO2CHsoSX506Y.png", name: "PRODUCT DESIGN", desc: "UI/UX & branding" },
+    { img: "https://framerusercontent.com/images/z3EVlv7PJ0r24sAph7fO38AhDg.png", name: "CLOUD & DEVOPS", desc: "AWS, CI/CD & scale" },
+    { img: "https://framerusercontent.com/images/5Jxk2EPVsxFPOX50Ru6ZIaPKQoY.png", name: "DATA & ML", desc: "Pipelines & models" },
+    { img: "https://framerusercontent.com/images/hLfcbhtQAGM0iFbLcbEfMViSi0.png", name: "INTEGRATIONS", desc: "APIs & third-party" },
+    { img: "https://framerusercontent.com/images/T93AD43QxOG2hwxPNyxgo7pI.png", name: "SUPPORT & GROWTH", desc: "Maintenance & scale" },
+    { img: "https://framerusercontent.com/images/QGWM2wh1FhSXwwCgj5OwfMJELRM.png", name: "PRODUCT ENGINEERING", desc: "Web, mobile & SaaS" },
+    { img: "https://framerusercontent.com/images/WDx7bTWoPj1VrQwYMPTL8JdhaQA.png", name: "AI & AUTOMATION", desc: "Agents, RAG & workflows" },
+    { img: "https://framerusercontent.com/images/wK2FhKYSAKcCoeCO2CHsoSX506Y.png", name: "PRODUCT DESIGN", desc: "UI/UX & branding" },
+    { img: "https://framerusercontent.com/images/z3EVlv7PJ0r24sAph7fO38AhDg.png", name: "CLOUD & DEVOPS", desc: "AWS, CI/CD & scale" },
+    { img: "https://framerusercontent.com/images/5Jxk2EPVsxFPOX50Ru6ZIaPKQoY.png", name: "DATA & ML", desc: "Pipelines & models" },
+    { img: "https://framerusercontent.com/images/hLfcbhtQAGM0iFbLcbEfMViSi0.png", name: "INTEGRATIONS", desc: "APIs & third-party" },
+    { img: "https://framerusercontent.com/images/T93AD43QxOG2hwxPNyxgo7pI.png", name: "SUPPORT & GROWTH", desc: "Maintenance & scale" },
 ];
 
 function RecognitionsMarquee() {
@@ -117,19 +117,18 @@ export default function Recognitions() {
                 <Reveal>
                     <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-4 py-1.5 text-xs text-white/80">
                         <span className="size-1.5 rounded-full bg-white" />
-                        Our Certifications
+                        What we do
                     </div>
                 </Reveal>
                 <Reveal>
                     <h2 className="mt-6 font-display text-5xl sm:text-7xl lg:text-[8rem] font-semibold tracking-[-0.04em] md:leading-[0.95]">
-                        Recognitions
+                        Capabilities
                     </h2>
                 </Reveal>
                 <Reveal>
                     <p className="mx-auto mt-8 max-w-xl text-[15px] leading-relaxed text-white/60">
-                        “As award-winning digital experts, we leverage proven expertise and official
-                        certifications to provide seamless web development, allowing you to stay focused on
-                        your core business.”
+                        “The engineering DNA behind every Rhinon product — product engineering, AI,
+                        design and cloud, all in-house.”
                     </p>
                 </Reveal>
             </div>

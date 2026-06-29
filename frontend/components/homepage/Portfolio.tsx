@@ -6,17 +6,17 @@ import Reveal from "./Reveal";
 import { IMG } from "./constants";
 
 const PORTFOLIO = [
-    { tags: ["Branding", "Web", "Marketing"], img: IMG.port1, t: "Unerio Landing page", body: "A seamless digital experience crafted to elevate brand presence and organic visibility." },
-    { tags: ["Branding", "Web"], img: IMG.port2, t: "Jorger Clarkson", body: "Strategic personal branding and SEO optimization to amplify digital authority." },
-    { tags: ["Branding", "Web"], img: IMG.port3, t: "DS Freelance Developer", body: "Showcase key project results and improve SEO with summary nice to have this." },
-    { tags: ["App Design", "SEO/Marketing"], img: IMG.port4, t: "Architecture Studio", body: "Crafting digital spaces with architectural precision and timeless aesthetic." },
+    { tags: ["SaaS", "AI", "CRM"], img: IMG.port1, t: "Saleszium", body: "All-in-one customer engagement & sales platform — AI chatbot, live chat, CRM, automation and campaigns." },
+    { tags: ["Mobile", "Social", "Consumer"], img: IMG.port2, t: "Furrcircle", body: "India's all-in-one app for pet parents — a social network, digital health passport and local community." },
+    { tags: ["Studio", "Web", "AI"], img: IMG.port3, t: "Rhinon Labs", body: "Our in-house product studio — it designs, builds, deploys and supports, and runs on its own at rhinonlabs.com." },
+    { tags: ["Coming soon"], img: IMG.port4, t: "More on the way", body: "New products are in active development across the Rhinon Tech portfolio." },
 ];
 
 export default function Portfolio() {
     return (
         <section className="mx-auto max-w-[1400px] px-6 py-16 md:py-24">
             <Reveal>
-                <div className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-white/50">Latest Works</div>
+                <div className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-white/50">What we've built</div>
                 <h2 className="mt-3 font-display text-4xl sm:text-5xl md:text-7xl font-medium tracking-tight">
                     Portfolio
                 </h2>
@@ -62,7 +62,7 @@ export default function Portfolio() {
             </div>
             <div className="mt-10 flex justify-center">
                 <a href="#" className="group inline-flex items-center gap-2 rounded-full bg-white/5 backdrop-blur px-1.5 py-1.5 pl-5 text-sm font-medium">
-                    <span>View All Projects</span>
+                    <span>Explore the products</span>
                     <span className="flex size-7 items-center justify-center rounded-full bg-white text-black transition-transform group-hover:rotate-45">
                         <ChevronRight className="size-3.5" />
                     </span>

@@ -8,21 +8,21 @@ import { IMG } from "./constants";
 const TESTIMONIALS = [
   {
     img: IMG.testimonial,
-    quote: "“The progress we’ve achieved recently comes directly from their clear vision and consistent.”",
-    name: "OLIVER HAYES",
-    role: "CEO, Calyx Labs"
+    quote: "“Saleszium replaced four tools for us — chat, CRM and automation in one place.”",
+    name: "SALESZIUM USER",
+    role: "SMB owner"
   },
   {
     img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80",
-    quote: "“Our growth over the past three years wouldn't be possible without Norvin's strategic support and high-end design.”",
-    name: "JULIAN BROOKS",
-    role: "Founder, Velo Digital"
+    quote: "“Furrcircle keeps my dog's whole health record in my pocket — and found us a vet next door.”",
+    name: "FURRCIRCLE MEMBER",
+    role: "Pet parent"
   },
   {
     img: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
-    quote: "“They completely transformed our design ecosystem. The delivery was fast, responsive, and of the highest quality.”",
-    name: "SARAH JENKINS",
-    role: "VP of Product, Aura Tech"
+    quote: "“Everything Rhinon ships feels considered — fast, clean and genuinely useful.”",
+    name: "EARLY ADOPTER",
+    role: "Across our products"
   }
 ];
 

@@ -6,8 +6,8 @@ import Reveal from "./Reveal";
 
 const PROCESS = [
     {
-        n: "Research",
-        body: "Analyzing markets and moodboarding to define a strategic visual direction and wireframe foundation before execution.",
+        n: "Spot a problem",
+        body: "We start a product only when there's a real, painful problem worth solving.",
         pct: 30,
         tag: "FOUNDATION",
         icon: (
@@ -20,8 +20,8 @@ const PROCESS = [
         ),
     },
     {
-        n: "Build & Execute",
-        body: "Transforming strategies into high-fidelity visuals and high-performance code, ensuring a seamless digital experience.",
+        n: "Build in-house",
+        body: "We design and engineer the product end to end, with our own team.",
         pct: 70,
         tag: "PRODUCTION",
         icon: (
@@ -32,10 +32,10 @@ const PROCESS = [
         ),
     },
     {
-        n: "Test & Handoff",
-        body: "Rigorous testing and final polishing followed by a complete asset handoff for a successful, ready-to-use launch.",
+        n: "Launch & operate",
+        body: "We ship it, run it as a product, and keep improving it for the long term.",
         pct: 100,
-        tag: "DELIVERY",
+        tag: "LAUNCH",
         icon: (
             <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="h-7 w-7">
                 <rect x="8" y="6" width="16" height="22" rx="2" />
@@ -78,7 +78,7 @@ export default function Process() {
                 </Reveal>
                 <Reveal>
                     <p className="max-w-[260px] text-sm leading-snug text-white/55">
-                        We provide tailor-made services adapt for any business mode to help growth faster
+                        How an idea becomes a product we own and operate.
                     </p>
                 </Reveal>
             </div>

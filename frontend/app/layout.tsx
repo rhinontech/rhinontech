@@ -19,8 +19,9 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "Norvin Agency",
-  description: "Award-winning design agency.",
+  title: "Rhinon Tech",
+  description:
+    "Rhinon Tech is a technology company that builds and operates a house of products — Saleszium, Furrcircle, Rhinon Labs and more.",
 };
 
 export default function RootLayout({

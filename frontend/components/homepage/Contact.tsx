@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import { Phone, ChevronRight } from "lucide-react";
+import Button from "../Button";
 
 const LOGOS = ["Logoipsum", "◍◌◍", "IPSUM*", "∞∞", "⊕ orbit", "ACME", "Nova", "Quantum"];
 
@@ -92,15 +93,7 @@ export default function Contact() {
                                 </div>
                             </div>
 
-                            <a
-                                href="#"
-                                className="group mt-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] py-1.5 pl-5 pr-1.5 text-sm font-medium backdrop-blur"
-                            >
-                                <span>Start Project</span>
-                                <span className="flex size-7 items-center justify-center rounded-full bg-white text-black transition-transform group-hover:rotate-45">
-                                    <ChevronRight className="size-3.5" />
-                                </span>
-                            </a>
+                            <Button className="mt-5" text="Start Project" href="#" />
                         </div>
                     </div>
 

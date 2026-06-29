@@ -4,6 +4,7 @@ import React from "react";
 import { ArrowUpRight, ChevronRight } from "lucide-react";
 import Reveal from "./Reveal";
 import { IMG } from "./constants";
+import Button from "../Button";
 
 const PORTFOLIO = [
     { tags: ["Branding", "Web", "Marketing"], img: IMG.port1, t: "Unerio Landing page", body: "A seamless digital experience crafted to elevate brand presence and organic visibility." },
@@ -15,12 +16,20 @@ const PORTFOLIO = [
 export default function Portfolio() {
     return (
         <section className="mx-auto max-w-[1400px] px-6 py-16 md:py-24">
-            <Reveal>
-                <div className="text-[10px] md:text-xs uppercase tracking-[0.3em] text-white/50">Latest Works</div>
-                <h2 className="mt-3 font-display text-4xl sm:text-5xl md:text-7xl font-medium tracking-tight">
-                    Portfolio
-                </h2>
-            </Reveal>
+            {/* Centered Header */}
+            <div className="flex flex-col items-center text-center mb-16">
+                <Reveal>
+                    <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-1.5 text-xs text-white/80">
+                        <span className="size-1.5 rounded-full bg-white animate-pulse" />
+                        Latest Works
+                    </span>
+                </Reveal>
+                <Reveal delay={0.15}>
+                    <h2 className="font-display text-4xl sm:text-6xl md:text-9xl font-semibold tracking-tight mt-6 leading-none text-white">
+                        Portfolio
+                    </h2>
+                </Reveal>
+            </div>
             <div className="mt-12 grid gap-6 md:grid-cols-2">
                 {PORTFOLIO.map((p, i) => (
                     <Reveal key={p.t} delay={i * 0.05}>
@@ -61,12 +70,7 @@ export default function Portfolio() {
                 ))}
             </div>
             <div className="mt-10 flex justify-center">
-                <a href="#" className="group inline-flex items-center gap-2 rounded-full bg-white/5 backdrop-blur px-1.5 py-1.5 pl-5 text-sm font-medium">
-                    <span>View All Projects</span>
-                    <span className="flex size-7 items-center justify-center rounded-full bg-white text-black transition-transform group-hover:rotate-45">
-                        <ChevronRight className="size-3.5" />
-                    </span>
-                </a>
+                <Button text="View All Projects" href="#" />
             </div>
         </section>
     );

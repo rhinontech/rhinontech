@@ -1,0 +1,6 @@
+{
+  "label": "Getting Started",
+  "order": 1,
+  "icon": "Rocket",
+  "description": "Run the stack, authenticate, and make your first request."
+}

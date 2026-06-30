@@ -59,10 +59,10 @@ const Dribbble = (props: React.SVGProps<SVGSVGElement>) => (
 );
 
 const AWARDS = [
-    { tag: "DRIBBBLE", title: "TOP AGENCY", note: "Dribbble Selected 2026." },
-    { tag: "BEHANCE", title: "1ST WINNER", note: "Recognized by Global Entities 2025." },
-    { tag: "FWA AWARD", title: "SOTD 2026", note: "FWA Awards UI/UX Collections" },
-    { tag: "AWWWARDS", title: "SOTY 2025", note: "Awwwards Winner 2025." },
+    { tag: "PRODUCT", title: "SALESZIUM", note: "All-in-one customer engagement & sales platform." },
+    { tag: "PRODUCT", title: "FURRCIRCLE", note: "India's all-in-one app for pet parents." },
+    { tag: "STUDIO", title: "RHINON LABS", note: "We design, build, deploy & support digital products." },
+    { tag: "WHAT'S NEXT", title: "MORE SOON", note: "New products in active development." },
 ];
 
 export default function HeroSection() {
@@ -100,7 +100,7 @@ export default function HeroSection() {
                             className="flex items-center gap-1.5 text-[15px] font-semibold tracking-tight text-white"
                         >
                             <span className="text-white/90">✺</span>
-                            <span>Norvin</span>
+                            <span>Rhinon</span>
                         </motion.span>
                     </div>
                 </div>
@@ -147,14 +147,14 @@ export default function HeroSection() {
             >
                 {/* Massive wordmark */}
                 <div>
-                    <NorvinWordmark />
+                    <RhinonWordmark />
                     <motion.div
                         initial={{ y: 30, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 1.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         className="mt-4 text-[20px] font-semibold leading-[1.1] tracking-tight text-white md:text-[32px]"
                     >
-                        <div>Award Winning <br /> Agency</div>
+                        <div>A House of <br /> Products</div>
                     </motion.div>
                 </div>
 
@@ -178,13 +178,13 @@ export default function HeroSection() {
                                 ))}
                             </div>
                             <div>
-                                <div className="text-2xl lg:text-3xl font-semibold">63k+</div>
-                                <div className="text-xs lg:text-sm text-white/60">Clients</div>
+                                <div className="text-2xl lg:text-3xl font-semibold">3+</div>
+                                <div className="text-xs lg:text-sm text-white/60">Products</div>
                             </div>
                         </div>
                         <p className="max-w-[22rem] text-sm lg:text-[15px] leading-relaxed text-white/75">
-                            A global design agency crafting high-end digital products and immersive
-                            experiences.
+                            Rhinon Tech builds and operates a family of technology products —
+                            designed, engineered and run in-house.
                         </p>
                         <Button href="#contact" text="Our Story" />
                     </motion.div>
@@ -219,8 +219,8 @@ export default function HeroSection() {
     );
 }
 
-function NorvinWordmark() {
-    const letters = "Norvin".split("");
+function RhinonWordmark() {
+    const letters = "Rhinon".split("");
     return (
         <h1 className="font-display text-[clamp(4.2rem,16vw,24rem)] font-[500] leading-[0.82] tracking-[-0.075em]">
             {letters.map((l, i) => (

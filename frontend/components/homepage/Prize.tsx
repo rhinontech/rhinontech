@@ -5,12 +5,12 @@ import { ArrowUpRight } from "lucide-react";
 import { IMG } from "./constants";
 
 const PRIZES = [
-  { img: IMG.prize1, t: "FWA - Prestigious Site of The Day 2025 Winner", sub: "[Unerio Landing]", year: "2025" },
-  { img: IMG.prize2, t: "Awwwards Studio of The Year 2023", sub: "[Unerio Landing]", year: "2023" },
-  { img: IMG.prize3, t: "D&AD Wood Pencil Award 2024", sub: "[Unerio Landing]", year: "2024" },
+  { img: IMG.prize1, t: "SaaS — software that runs a business", sub: "[Saleszium]", year: "Live" },
+  { img: IMG.prize2, t: "Consumer — apps people love daily", sub: "[Furrcircle]", year: "Live" },
+  { img: IMG.prize3, t: "Studio — our in-house build team", sub: "[Rhinon Labs]", year: "Live" },
 ];
 
-const PRIZE_LIST = ["FWA", "Behance Featured", "Awwwards SOTD", "SiteInspire", "Framer", "Webflow Expert"];
+const PRIZE_LIST = ["In-house", "Product-led", "Long-term", "AI-native", "Design-first", "Owned"];
 
 export default function Prize() {
   const [order, setOrder] = useState([0, 1, 2]);
@@ -36,19 +36,19 @@ export default function Prize() {
       <div className="flex flex-col gap-6">
         <div className="inline-flex w-fit items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs">
           <span className="size-1.5 rounded-full bg-white" />
-          Awards & Recognizations
+          What unifies us
         </div>
 
         <div className="flex flex-col items-start justify-between gap-8 md:flex-row md:items-end">
           <h2 className="font-display text-5xl sm:text-7xl md:text-[10rem] md:leading-none font-medium tracking-tight">
-            Prize
+            Our DNA
           </h2>
           <div className="flex flex-col items-start gap-4 md:max-w-xs md:items-end md:text-right">
             <p className="text-xs md:text-sm text-white/50 leading-relaxed">
-              Redefining digital standards through award-winning design and strategic innovation across 20+ countries.
+              A growing family of products — designed, built, launched and supported entirely in-house.
             </p>
             <a href="#contact" className="group inline-flex items-center gap-1.5 border-b border-white/40 pb-1 text-xs md:text-sm font-medium">
-              Start Project
+              Get in touch
               <ArrowUpRight className="size-4 transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
             </a>
           </div>
@@ -60,7 +60,7 @@ export default function Prize() {
         {/* Background giant Awwward text */}
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center overflow-hidden">
           <span className="font-display text-[6rem] sm:text-[14rem] md:text-[20rem] font-medium tracking-tight text-white/[0.04]">
-            Awwward
+            Rhinon
           </span>
         </div>
 
@@ -113,7 +113,7 @@ export default function Prize() {
 
       {/* Caption */}
       <p className="mt-12 text-center text-xs md:text-sm text-white/50">
-        Delivering impactful projects across many <span className="font-medium text-white underline underline-offset-4">diverse countries.</span>
+        Built, launched and supported entirely <span className="font-medium text-white underline underline-offset-4">in-house.</span>
       </p>
 
       {/* Prize list */}

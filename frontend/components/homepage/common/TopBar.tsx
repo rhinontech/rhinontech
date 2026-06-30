@@ -64,7 +64,7 @@ export default function TopBar() {
                 hour: "numeric",
                 minute: "2-digit",
                 hour12: true,
-                timeZone: "America/New_York",
+                timeZone: "Asia/Kolkata",
             };
             setTime(new Intl.DateTimeFormat("en-US", opts).format(d));
         };
@@ -151,7 +151,7 @@ export default function TopBar() {
                         <span className="font-bold text-lg hidden sm:inline">Menu</span>
                     </motion.button>
                     <div className="hidden text-lg text-white/70 md:flex items-center gap-2 tracking-tight">
-                        <span>/ New York, USA - {time}</span>
+                        <span>/ Bhubaneswar, India - {time}</span>
                     </div>
                 </div>
 

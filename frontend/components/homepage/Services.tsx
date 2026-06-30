@@ -10,10 +10,10 @@ import { IMG } from "./constants";
 /* ============================================================ SERVICE 01 */
 export function ServiceBrand() {
     const tiles = [
-        { t: "Brand Strategy", img: IMG.brand1, body: "Defining timeless identities through refined and purposeful design." },
-        { t: "Visual Heritage", img: IMG.brand2, body: "Preserving brand essence through enduring visual language." },
-        { t: "Digital Identity", img: IMG.brand3, body: "Elevating digital presence through modern and intuitive design." },
-        { t: "Motion & Style", img: IMG.brand4, body: "Crafting kinetic systems that bring brands to life." },
+        { t: "AI Chatbot", img: IMG.brand1, body: "An AI assistant trained on your content, answering customers 24/7." },
+        { t: "CRM & Pipeline", img: IMG.brand2, body: "Leads, contacts, deals and forecasting — captured automatically." },
+        { t: "Omnichannel Inbox", img: IMG.brand3, body: "Website chat, WhatsApp and email in one shared inbox." },
+        { t: "Automation", img: IMG.brand4, body: "Workflows and campaigns that nurture and convert on autopilot." },
     ];
     const [active, setActive] = useState(2);
     return (
@@ -27,21 +27,22 @@ export function ServiceBrand() {
                         </div>
                     </Reveal>
                 </div>
-                
+
                 {/* Foreground Title & Text - Positioned at the bottom of the number */}
                 <div className="relative z-10 mt-[100px] sm:mt-[160px] md:mt-[230px] lg:mt-[280px] pb-6 md:pb-12">
                     <Reveal>
                         <h2 className="font-display text-4xl sm:text-6xl md:text-9xl font-semibold tracking-tight text-white leading-none">
-                            Brand Identity
+                            Saleszium
                         </h2>
                     </Reveal>
                     <Reveal className="flex justify-center mt-6">
                         <p className="max-w-lg text-sm sm:text-base text-white/55 leading-relaxed mx-auto">
-                            Elevating brand presence through cohesive visual systems and creative storytelling
-                            across global markets.
+                            Our all-in-one customer engagement & sales platform — AI chatbots, CRM,
+                            automation and campaigns in one place.
                         </p>
                     </Reveal>
                 </div>
+
             </div>
 
             <div
@@ -103,7 +104,7 @@ export function ServiceBrand() {
             </div>
 
             <div className="mt-10 flex justify-center">
-                <Button text="View More" />
+                <Button href="https://app.saleszium.com" text="Visit Saleszium" />
             </div>
         </section>
     );
@@ -112,9 +113,9 @@ export function ServiceBrand() {
 /* ============================================================ SERVICE 02 */
 export function ServiceMarketing() {
     const rows = [
-        { n: "01.", t: "SEO Strategic Audit", count: "248+ Project Done", img: IMG.mk1, body: "Significant Cost Reduction Significant Cost Reduction Significant Cost." },
-        { n: "02.", t: "Performance Marketing", count: "168+ Project Done", img: IMG.mk2, body: "Maximizing campaign ROI through data-driven and scalable strategies." },
-        { n: "03.", t: "Growth & Optimization", count: "243+ Project Done", img: IMG.mk3, body: "Accelerating business scale through continuous and rigorous optimization." },
+        { n: "01.", t: "Pet-first social network", count: "Feed · Stories · Reels", img: IMG.mk1, body: "A feed, stories and reels made for pets and the people who love them." },
+        { n: "02.", t: "Digital health passport", count: "Vaccines · Vitals · Reminders", img: IMG.mk2, body: "Every vaccination, medication and vital in one place, with care reminders." },
+        { n: "03.", t: "Local pet community", count: "Circles · Vets · Adoption", img: IMG.mk3, body: "Circles, playdates, vet discovery, adoption and lost & found near you." },
     ];
     const [open, setOpen] = useState(0);
     return (
@@ -133,19 +134,19 @@ export function ServiceMarketing() {
                     <div className="relative z-10 mt-[100px] sm:mt-[160px] md:mt-[230px] lg:mt-[280px] pb-2">
                         <Reveal>
                             <h2 className="font-display text-4xl sm:text-6xl md:text-9xl font-semibold tracking-tight text-white leading-none">
-                                Marketing
+                                Furrcircle
                             </h2>
                         </Reveal>
                     </div>
                 </div>
                 <Reveal className="md:col-span-4 mt-4 md:mt-[160px] md:pt-4 lg:mt-[300px] md:pl-24">
                     <p className="max-w-sm text-sm text-white/60">
-                        Redefining digital standards through award-winning design and strategic innovation across
+                        India's all-in-one app for pet parents — social, health and community in one place.
                     </p>
                 </Reveal>
-                <Reveal className="md:col-span-3 mt-4 md:mt-[160px] md:pt-4 lg:mt-[300px] w-full flex md:justify-end">
-                    <a href="#contact" className="inline-flex items-center gap-1 border-b border-white/60 pb-1 text-sm font-medium text-white hover:text-white/80 transition-colors">
-                        Start Project <ArrowUpRight className="size-3.5" />
+                <Reveal className="md:col-span-3 md:pt-10 md:text-right">
+                    <a href="https://furrcircle.com" target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 border-b border-white/60 pb-1 text-sm font-medium text-white hover:text-white/80 transition-colors">
+                        Visit Furrcircle <ArrowUpRight className="size-3.5" />
                     </a>
                 </Reveal>
             </div>
@@ -204,38 +205,38 @@ export function ServiceMarketing() {
 const INTERACTION = [
     {
         icon: "https://framerusercontent.com/images/j6HWn7LptAhxihEwJfKHn7UhIR4.svg",
-        t: "UI/UX Strategy",
-        bullets: ["User behavior research", "Conversion mapping", "High-fidelity wireframing"],
-        badge: "150+ Projects",
+        t: "UI/UX Design",
+        bullets: ["User research", "Product & UX design", "High-fidelity prototypes"],
+        badge: "Figma to ship",
         kind: "STRATEGIC",
     },
     {
         icon: "https://framerusercontent.com/images/hwD6BrZM6gkv12RiOnA4NwcWcQ.svg",
-        t: "SASS Product MVP",
-        bullets: ["MVP rapid prototyping", "SaaS architecture design", "Go-to-market strategy"],
-        badge: "Global Service",
-        kind: "NATIVE",
+        t: "SaaS & MVP",
+        bullets: ["Rapid MVP build", "Multi-tenant SaaS", "Launch-ready in weeks"],
+        badge: "For founders",
+        kind: "RAPID",
     },
     {
         icon: "https://framerusercontent.com/images/yUDZLgc27PaBBL69prsPLhFpg.png",
-        t: "No-Code Developer",
-        bullets: ["No-code development", "Workflow automation", "Custom CRM building"],
+        t: "Cloud & DevOps",
+        bullets: ["Cloud architecture", "CI/CD pipelines", "Deploy & scale"],
         badge: "100% On-time",
         kind: "RELIABLE",
     },
     {
         icon: "https://framerusercontent.com/images/OPY249jgxIS4H4NfL7ncanmiJWU.png",
-        t: "Mobile App",
-        bullets: ["Brand identity design", "Scalable design systems", "Interactive prototypes"],
-        badge: "Est. 2020",
+        t: "Mobile Apps",
+        bullets: ["iOS & Android", "One codebase", "Push & realtime"],
+        badge: "Cross-platform",
         kind: "PROFESSIONAL",
     },
     {
         icon: "https://framerusercontent.com/images/6WJhpchqkcptppty6gWho8qPTQ4.png",
         t: "E-Commerce",
-        bullets: ["Custom storefront design", "Inventory sync automation", "Payment gateway setup"],
-        badge: "Shopify Experts",
-        kind: "CERTIFIED",
+        bullets: ["Custom storefronts", "Inventory sync", "Payment gateways"],
+        badge: "Storefronts",
+        kind: "COMMERCE",
     },
 ];
 
@@ -279,7 +280,7 @@ export function ServiceInteraction() {
                         </div>
                     </Reveal>
                 </div>
-                
+
                 {/* Foreground Title & Text - Positioned at the bottom of the number */}
                 <div className="relative z-10 mt-[100px] sm:mt-[160px] md:mt-[230px] lg:mt-[280px] pb-6 md:pb-12">
                     <Reveal>
@@ -294,6 +295,16 @@ export function ServiceInteraction() {
                         </p>
                     </Reveal>
                 </div>
+                <h2 className="relative text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight">
+                    Rhinon Labs
+                </h2>
+                <p className="relative mx-auto mt-6 max-w-md text-xs sm:text-sm md:text-base text-white/50 leading-relaxed">
+                    Our in-house product studio — it designs, builds, deploys and supports our
+                    products, and takes on select client work. It speaks for itself.
+                </p>
+                <a href="https://rhinonlabs.com" target="_blank" rel="noreferrer" className="relative mt-6 inline-flex items-center gap-1.5 border-b border-white/60 pb-1 text-sm font-medium text-white hover:text-white/80 transition-colors">
+                    Visit Rhinon Labs <ArrowUpRight className="size-3.5" />
+                </a>
             </div>
 
             {/* Draggable cards */}

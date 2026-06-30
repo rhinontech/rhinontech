@@ -16,7 +16,7 @@ import Faqs from "./Faqs";
 import Partners from "./Partners";
 import Contact from "./Contact";
 
-export default function NorvinHome() {
+export default function RhinonHome() {
     return (
         <main className="relative w-full overflow-x-hidden bg-black text-white">
             <TopBar />

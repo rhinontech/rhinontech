@@ -2,7 +2,7 @@
 
 import React from "react";
 
-const ITEMS = ["Flexible Pricing", "Top-notch Experts", "Dedicated Support 24/7", "Creative Solutions", "Award Winning"];
+const ITEMS = ["Built in-house", "Product-led", "Long-term thinking", "One team", "Many products"];
 
 function Strip({ rotate, bg, fg }: { rotate: number; bg: string; fg: string }) {
   return (

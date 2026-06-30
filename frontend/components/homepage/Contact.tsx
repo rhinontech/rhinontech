@@ -3,8 +3,9 @@
 import React, { useState } from "react";
 import { Phone, ChevronRight } from "lucide-react";
 import Button from "../Button";
+import { Mail } from "lucide-react";
 
-const LOGOS = ["Logoipsum", "◍◌◍", "IPSUM*", "∞∞", "⊕ orbit", "ACME", "Nova", "Quantum"];
+const LOGOS = ["Saleszium", "Furrcircle", "Rhinon Labs", "Rhinon Tech"];
 
 function Field({
     label,
@@ -76,24 +77,24 @@ export default function Contact() {
                             </span>
 
                             <h2 className="mt-6 text-5xl sm:text-6xl md:text-8xl font-bold tracking-tight">
-                                Hire us!!
+                                Let's talk
                             </h2>
                         </div>
 
                         <div>
                             <div className="mt-12 md:mt-40 flex items-center gap-3">
                                 <span className="flex size-10 items-center justify-center rounded-full border border-white/15">
-                                    <Phone className="size-4" />
+                                    <Mail className="size-4" />
                                 </span>
                                 <div className="text-sm">
-                                    <div className="text-white/50 text-xs">Call Us 24/7</div>
-                                    <a href="tel:+0278346236" className="font-medium hover:text-white/80 transition-colors">
-                                        +0278346236
+                                    <div className="text-white/50 text-xs">General enquiries</div>
+                                    <a href="mailto:hello@rhinon.tech" className="font-medium hover:text-white/80 transition-colors">
+                                        hello@rhinon.tech
                                     </a>
                                 </div>
                             </div>
 
-                            <Button className="mt-5" text="Start Project" href="#" />
+                            <Button className="mt-5" text="Get in Touch" href="#" />
                         </div>
                     </div>
 
@@ -101,15 +102,14 @@ export default function Contact() {
                     <div className="md:col-span-7">
                         <form className="rounded-3xl border border-white/10 bg-[#0d0d0d]/80 p-6 md:p-10 backdrop-blur-xl">
                             <div className="grid gap-5 md:grid-cols-2">
-                                <Field label="Name" placeholder="Marcus Kane" />
-                                <Field label="Email" placeholder="marcus@example.com" type="email" />
-                                <SelectField label="Service" options={["Branding", "Development", "UI/UX"]} />
-                                <SelectField label="Budget" options={["$1,000", "$2,000", "$5,000+"]} />
+                                <Field label="Name" placeholder="Your name" />
+                                <Field label="Email" placeholder="you@company.com" type="email" />
+                                <SelectField label="Reason" options={["Partnership", "Press", "Careers", "Product support", "Other"]} />
                                 <div className="md:col-span-2">
                                     <label className="block text-sm font-medium">Message</label>
                                     <textarea
                                         rows={4}
-                                        placeholder="Write your request"
+                                        placeholder="How can we help?"
                                         className="mt-2 w-full resize-none rounded-xl border border-white/10 bg-[#0a0a0a] px-4 py-3 text-sm text-white placeholder:text-white/30 outline-none focus:border-white/30"
                                     />
                                 </div>

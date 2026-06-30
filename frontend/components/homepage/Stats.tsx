@@ -51,18 +51,18 @@ export default function Stats() {
                                 <div className="flex flex-row justify-between">
                                     <Globe className="size-8 text-white mt-1 shrink-0" />
                                     <h2 className="text-3xl md:text-[50px] font-semibold leading-tight tracking-tight text-white">
-                                        Defining the future of brands
+                                        We build and operate a
                                     </h2>
                                 </div>
                             </Reveal>
                             <Reveal delay={0.4}>
                                 <h2 className="text-3xl md:text-[50px] font-semibold leading-tight tracking-tight text-white">
-                                    through design, digital excellence and
+                                    family of technology products —
                                 </h2>
                             </Reveal>
                             <Reveal delay={0.6}>
                                 <h2 className="text-3xl md:text-[50px] font-semibold leading-tight tracking-tight text-white">
-                                    <span className="text-white/40"> human-centric storytelling</span>
+                                    <span className="text-white/40"> designed and run in-house</span>
                                 </h2>
                             </Reveal>
                         </div>
@@ -72,13 +72,13 @@ export default function Stats() {
                             <div className=" flex flex-col justify-between">
                                 <Reveal>
                                     <p className="text-[13px] leading-relaxed text-white/60 max-w-[450px]">
-                                        <span>Redefining digital standards with award-winning
-                                            design across 20+ countries.</span>
+                                        <span>From SaaS to consumer apps — every Rhinon
+                                            product is built, owned and run in-house.</span>
                                     </p>
                                 </Reveal>
 
                                 <Reveal>
-                                    <Button href="#contact" text="About Norvin" />
+                                    <Button href="#contact" text="About Rhinon Tech" />
                                 </Reveal>
                             </div>
                             <Reveal className="lg:col-span-3 flex justify-end">
@@ -99,28 +99,28 @@ export default function Stats() {
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
                     <Reveal className="text-left">
                         <div className="font-display text-7xl md:text-8xl font-medium tracking-tight text-white leading-none">
-                            <CountUp to={35} suffix="+" />
+                            <CountUp to={3} suffix="+" />
                         </div>
                         <div className="mt-4 text-[15px] text-white/50 leading-relaxed">
-                            Awards &<br />Recognizations
+                            Products &<br />Ventures
                         </div>
                     </Reveal>
 
                     <Reveal className="text-center">
                         <div className="font-display text-7xl md:text-8xl font-medium tracking-tight text-white leading-none">
-                            <CountUp to={65} suffix="" />
+                            <CountUp to={100} suffix="%" />
                         </div>
                         <div className="mt-4 text-[15px] text-white/50 leading-relaxed">
-                            Satisfied Clients &<br />Partners
+                            Built<br />in-house
                         </div>
                     </Reveal>
 
                     <Reveal className="text-right">
                         <div className="font-display text-7xl md:text-8xl font-medium tracking-tight text-white leading-none">
-                            <CountUp to={98} suffix="+" />
+                            <CountUp to={1} suffix="" />
                         </div>
                         <div className="mt-4 text-[15px] text-white/50 leading-relaxed">
-                            Projects Completed<br />Worldwide
+House,<br />one team
                         </div>
                     </Reveal>
                 </div>
@@ -147,8 +147,8 @@ export default function Stats() {
                              </Reveal>
                             <Reveal delay={0.4}>
                                 <h2 className="text-3xl sm:text-4xl font-semibold leading-tight tracking-tight text-white">
-                                    Defining the future of brands through design, digital excellence and{" "}
-                                    <span className="text-white/40">human-centric storytelling</span>
+                                    We build and operate a family of technology products —{" "}
+                                    <span className="text-white/40">designed and run in-house</span>
                                 </h2>
                             </Reveal>
                         </div>
@@ -158,11 +158,11 @@ export default function Stats() {
                             <div className="flex flex-col gap-6 items-start max-w-md">
                                 <Reveal>
                                     <p className="text-sm leading-relaxed text-white/60">
-                                        Redefining digital standards with award-winning design across 20+ countries.
+                                        From SaaS to consumer apps — every Rhinon product is built, owned and run in-house.
                                     </p>
                                 </Reveal>
                                 <Reveal>
-                                    <Button href="#contact" text="About Norvin" />
+                                    <Button href="#contact" text="About Rhinon Tech" />
                                 </Reveal>
                             </div>
                             <Reveal className="flex justify-start md:justify-end shrink-0">
@@ -183,28 +183,28 @@ export default function Stats() {
                 <div className="grid grid-cols-1 sm:grid-cols-3 gap-10">
                     <Reveal className="text-left">
                         <div className="font-display text-6xl sm:text-7xl font-medium tracking-tight text-white leading-none">
-                            <CountUp to={35} suffix="+" />
+                            <CountUp to={3} suffix="+" />
                         </div>
                         <div className="mt-3 text-sm text-white/50 leading-relaxed">
-                            Awards &<br />Recognizations
+                            Products &<br />Ventures
                         </div>
                     </Reveal>
 
                     <Reveal className="text-left sm:text-center">
                         <div className="font-display text-6xl sm:text-7xl font-medium tracking-tight text-white leading-none">
-                            <CountUp to={65} suffix="" />
+                            <CountUp to={100} suffix="%" />
                         </div>
                         <div className="mt-3 text-sm text-white/50 leading-relaxed">
-                            Satisfied Clients &<br />Partners
+                            Built<br />in-house
                         </div>
                     </Reveal>
 
                     <Reveal className="text-left sm:text-right">
                         <div className="font-display text-6xl sm:text-7xl font-medium tracking-tight text-white leading-none">
-                            <CountUp to={98} suffix="+" />
+                            <CountUp to={1} suffix="" />
                         </div>
                         <div className="mt-3 text-sm text-white/50 leading-relaxed">
-                             Projects Completed<br />Worldwide
+ House,<br />one team
                         </div>
                     </Reveal>
                 </div>

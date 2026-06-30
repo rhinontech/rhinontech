@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { MapPin, Mail, ArrowUpRight } from "lucide-react";
+import { MapPin, Mail, ArrowUpRight, ChevronUp } from "lucide-react";
+import { motion } from "framer-motion";
 import Reveal from "../Reveal";
 import { IMG } from "../constants";
 
@@ -70,6 +71,10 @@ function SealBadge() {
 }
 
 export default function Footer() {
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
     return (
         <footer className="relative mt-16 md:mt-24 overflow-hidden border-t border-white/10">
             <img src={IMG.footerBg} alt="" className="pointer-events-none absolute inset-0 h-full w-full object-cover opacity-30" />
@@ -136,6 +141,36 @@ export default function Footer() {
                 <div className="mt-12 md:mt-16 flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-t border-white/10 pt-8 text-[11px] md:text-xs text-white/40">
                     <span>© 2026 Rhinon Tech. All Rights Reserved.</span>
                     <span>Bhubaneswar, India</span>
+                </div>
+            </div>
+
+            {/* Curved Line Image and Scroll to Top button */}
+            <div className="absolute -bottom-5 left-0 right-0 h-[69px] flex justify-center items-center pointer-events-none z-10">
+                <img
+                    src="https://framerusercontent.com/images/T7fAli8vfIe8NKa9eaqa4plcY6c.svg?width=1352&height=69"
+                    alt=""
+                    aria-hidden
+                    className="w-full max-w-[1352px] opacity-20 select-none rotate-180"
+                />
+                <div className="absolute inset-0 -top-6 flex justify-center items-center pointer-events-auto">
+                    <button
+                        onClick={scrollToTop}
+                        className="cursor-pointer text-white hover:text-white/80 transition-colors flex items-center justify-center p-4"
+                        aria-label="Back to top"
+                    >
+                        <motion.div
+                            animate={{ y: [0, -6, 0] }}
+                            transition={{
+                                duration: 1.8,
+                                repeat: Infinity,
+                                ease: "easeInOut",
+                            }}
+                            whileHover={{ scale: 1.2 }}
+                            whileTap={{ scale: 0.9 }}
+                        >
+                            <ChevronUp className="size-8 stroke-[2.5]" />
+                        </motion.div>
+                    </button>
                 </div>
             </div>
         </footer>

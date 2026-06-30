@@ -1,7 +1,9 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail, ChevronRight } from "lucide-react";
+import { Phone, ChevronRight } from "lucide-react";
+import Button from "../Button";
+import { Mail } from "lucide-react";
 
 const LOGOS = ["Saleszium", "Furrcircle", "Rhinon Labs", "Rhinon Tech"];
 
@@ -92,15 +94,7 @@ export default function Contact() {
                                 </div>
                             </div>
 
-                            <a
-                                href="#"
-                                className="group mt-6 inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] py-1.5 pl-5 pr-1.5 text-sm font-medium backdrop-blur"
-                            >
-                                <span>Get in touch</span>
-                                <span className="flex size-7 items-center justify-center rounded-full bg-white text-black transition-transform group-hover:rotate-45">
-                                    <ChevronRight className="size-3.5" />
-                                </span>
-                            </a>
+                            <Button className="mt-5" text="Get in Touch" href="#" />
                         </div>
                     </div>
 

@@ -80,21 +80,21 @@ function RecognitionsMarquee() {
                 {items.map((r, i) => (
                     <div
                         key={`${r.name}-${i}`}
-                        className="group w-[200px] shrink-0 select-none"
+                        className="group w-[190px] shrink-0 select-none"
                     >
-                        <div className="relative aspect-square overflow-hidden rounded-2xl border border-white/10 bg-white/[0.03] opacity-40 transition duration-500 group-hover:opacity-100 group-hover:border-white/30 group-hover:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.8)]">
+                        <div className="relative aspect-square overflow-hidden rounded-[24px] border border-white/10 flex items-center justify-center transition duration-500 opacity-100 group-hover:opacity-100 group-hover:border-white/20 group-hover:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.8)]">
                             <img
                                 src={r.img}
                                 alt={r.name}
                                 draggable={false}
-                                className="h-full w-full object-cover grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0"
+                                className="w-[110px] h-[110px] rounded-[18px] object-cover transition duration-500 group-hover:scale-105"
                             />
                         </div>
-                        <div className="mt-4 text-center transition duration-500 opacity-50 group-hover:opacity-100">
-                            <div className="text-[11px] font-medium uppercase tracking-[0.18em] text-white/80">
+                        <div className="mt-4 text-center transition duration-500 opacity-60 group-hover:opacity-100">
+                            <div className="text-white text-[15px] font-bold tracking-tight">
                                 {r.name}
                             </div>
-                            <div className="mt-1 text-[12px] text-white/40">{r.desc}</div>
+                            <div className="mt-1 text-xs text-white/40 font-medium">{r.desc}</div>
                         </div>
                     </div>
                 ))}

@@ -143,7 +143,7 @@ export default function HeroSection() {
 
             <motion.div
                 style={{ y: titleY }}
-                className="relative z-10 mx-auto flex h-auto lg:h-full w-full flex-col justify-between gap-10 lg:gap-0 px-6 md:px-15 pt-24 lg:pt-28 pb-10"
+                className="relative z-10 mx-auto flex h-auto lg:h-full w-full flex-col justify-between gap-10 lg:gap-0 px-6 md:px-15 pt-52 lg:pt-28 pb-10"
             >
                 {/* Massive wordmark */}
                 <div>

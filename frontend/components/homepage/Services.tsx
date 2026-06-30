@@ -19,22 +19,30 @@ export function ServiceBrand() {
     return (
         <section className="mx-auto max-w-[1400px] px-6 py-16 md:py-24">
             <div className="relative flex flex-col items-center text-center">
-                <Reveal>
-                    <div className="font-display text-[100px] md:text-[200px] leading-none font-medium text-white/[0.06]">
-                        01
-                    </div>
-                </Reveal>
-                <Reveal className="-mt-10 md:-mt-28">
-                    <h2 className="font-display text-4xl sm:text-6xl md:text-8xl font-semibold tracking-tight">
-                        Saleszium
-                    </h2>
-                </Reveal>
-                <Reveal>
-                    <p className="mt-6 max-w-md text-sm text-white/55">
-                        Our all-in-one customer engagement & sales platform — AI chatbots, CRM,
-                        automation and campaigns in one place.
-                    </p>
-                </Reveal>
+                {/* Large Background Number */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 select-none pointer-events-none z-0 w-full flex justify-center">
+                    <Reveal>
+                        <div className="font-display text-[150px] sm:text-[240px] md:text-[340px] lg:text-[420px] leading-none font-semibold bg-gradient-to-b from-white/[0.01] to-white/[0.2] bg-clip-text text-transparent">
+                            01
+                        </div>
+                    </Reveal>
+                </div>
+
+                {/* Foreground Title & Text - Positioned at the bottom of the number */}
+                <div className="relative z-10 mt-[100px] sm:mt-[160px] md:mt-[230px] lg:mt-[280px] pb-6 md:pb-12">
+                    <Reveal>
+                        <h2 className="font-display text-4xl sm:text-6xl md:text-9xl font-semibold tracking-tight text-white leading-none">
+                            Saleszium
+                        </h2>
+                    </Reveal>
+                    <Reveal className="flex justify-center mt-6">
+                        <p className="max-w-lg text-sm sm:text-base text-white/55 leading-relaxed mx-auto">
+                            Our all-in-one customer engagement & sales platform — AI chatbots, CRM,
+                            automation and campaigns in one place.
+                        </p>
+                    </Reveal>
+                </div>
+
             </div>
 
             <div
@@ -114,16 +122,24 @@ export function ServiceMarketing() {
         <section className="mx-auto max-w-[1400px] px-6 py-16 md:py-24">
             <div className="grid items-start gap-8 md:grid-cols-12">
                 <div className="relative md:col-span-5">
-                    <Reveal>
-                        <div className="pointer-events-none absolute -top-8 left-0 font-display text-[120px] md:text-[220px] font-semibold leading-none tracking-tight text-white/[0.07]">
-                            02
-                        </div>
-                        <h2 className="relative font-display text-4xl sm:text-6xl md:text-8xl font-semibold tracking-tight text-white">
-                            Furrcircle
-                        </h2>
-                    </Reveal>
+                    {/* Large Background Number */}
+                    <div className="absolute top-0 left-0 select-none pointer-events-none z-0">
+                        <Reveal>
+                            <div className="font-display text-[150px] sm:text-[240px] md:text-[340px] lg:text-[420px] leading-none font-semibold bg-gradient-to-b from-white/[0.01] to-white/[0.2] bg-clip-text text-transparent">
+                                02
+                            </div>
+                        </Reveal>
+                    </div>
+                    {/* Foreground Title */}
+                    <div className="relative z-10 mt-[100px] sm:mt-[160px] md:mt-[230px] lg:mt-[280px] pb-2">
+                        <Reveal>
+                            <h2 className="font-display text-4xl sm:text-6xl md:text-9xl font-semibold tracking-tight text-white leading-none">
+                                Furrcircle
+                            </h2>
+                        </Reveal>
+                    </div>
                 </div>
-                <Reveal className="md:col-span-4 md:pt-10">
+                <Reveal className="md:col-span-4 mt-4 md:mt-[160px] md:pt-4 lg:mt-[300px] md:pl-24">
                     <p className="max-w-sm text-sm text-white/60">
                         India's all-in-one app for pet parents — social, health and community in one place.
                     </p>
@@ -135,7 +151,7 @@ export function ServiceMarketing() {
                 </Reveal>
             </div>
 
-            <div className="mt-12 border-t border-white/10">
+            <div className="mt-12 md:ml-64 border-t border-white/10">
                 {rows.map((r, i) => {
                     const isOpen = open === i;
                     return (
@@ -255,20 +271,37 @@ export function ServiceInteraction() {
     return (
         <section className="relative overflow-hidden py-16 md:py-24 text-white">
             {/* Header */}
-            <div className="relative mx-auto max-w-5xl px-6 text-center">
-                <div
-                    aria-hidden
-                    className="pointer-events-none absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-[55%] select-none text-[8rem] sm:text-[12rem] md:text-[18rem] font-bold leading-none tracking-tight text-white/[0.06]"
-                >
-                    03
+            <div className="relative flex flex-col items-center text-center">
+                {/* Large Background Number */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 select-none pointer-events-none z-0 w-full flex justify-center">
+                    <Reveal>
+                        <div className="font-display text-[150px] sm:text-[240px] md:text-[340px] lg:text-[420px] leading-none font-semibold bg-gradient-to-b from-white/[0.01] to-white/[0.2] bg-clip-text text-transparent">
+                            03
+                        </div>
+                    </Reveal>
                 </div>
-                <h2 className="relative text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight">
+
+                {/* Foreground Title & Text - Positioned at the bottom of the number */}
+                <div className="relative z-10 mt-[100px] sm:mt-[160px] md:mt-[230px] lg:mt-[280px] pb-6 md:pb-12">
+                    <Reveal>
+                        <h2 className="font-display text-4xl sm:text-6xl md:text-9xl font-semibold tracking-tight text-white leading-none">
+                            Rhinon Labs
+                        </h2>
+                    </Reveal>
+                    <Reveal className="flex justify-center mt-6">
+                        <p className="max-w-lg text-sm sm:text-base text-white/55 leading-relaxed mx-auto">
+                            Our in-house product studio — it designs, builds, deploys and supports our
+                            products, and takes on select client work. It speaks for itself.
+                        </p>
+                    </Reveal>
+                </div>
+                {/* <h2 className="relative text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight">
                     Rhinon Labs
                 </h2>
                 <p className="relative mx-auto mt-6 max-w-md text-xs sm:text-sm md:text-base text-white/50 leading-relaxed">
                     Our in-house product studio — it designs, builds, deploys and supports our
                     products, and takes on select client work. It speaks for itself.
-                </p>
+                </p> */}
                 <a href="https://rhinonlabs.com" target="_blank" rel="noreferrer" className="relative mt-6 inline-flex items-center gap-1.5 border-b border-white/60 pb-1 text-sm font-medium text-white hover:text-white/80 transition-colors">
                     Visit Rhinon Labs <ArrowUpRight className="size-3.5" />
                 </a>

@@ -285,23 +285,23 @@ export function ServiceInteraction() {
                 <div className="relative z-10 mt-[100px] sm:mt-[160px] md:mt-[230px] lg:mt-[280px] pb-6 md:pb-12">
                     <Reveal>
                         <h2 className="font-display text-4xl sm:text-6xl md:text-9xl font-semibold tracking-tight text-white leading-none">
-                            Interaction
+                            Rhinon Labs
                         </h2>
                     </Reveal>
                     <Reveal className="flex justify-center mt-6">
                         <p className="max-w-lg text-sm sm:text-base text-white/55 leading-relaxed mx-auto">
-                            Crafting high-end digital interfaces that blend seamless functionality with bold,
-                            modern aesthetics.
+                            Our in-house product studio — it designs, builds, deploys and supports our
+                            products, and takes on select client work. It speaks for itself.
                         </p>
                     </Reveal>
                 </div>
-                <h2 className="relative text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight">
+                {/* <h2 className="relative text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight">
                     Rhinon Labs
                 </h2>
                 <p className="relative mx-auto mt-6 max-w-md text-xs sm:text-sm md:text-base text-white/50 leading-relaxed">
                     Our in-house product studio — it designs, builds, deploys and supports our
                     products, and takes on select client work. It speaks for itself.
-                </p>
+                </p> */}
                 <a href="https://rhinonlabs.com" target="_blank" rel="noreferrer" className="relative mt-6 inline-flex items-center gap-1.5 border-b border-white/60 pb-1 text-sm font-medium text-white hover:text-white/80 transition-colors">
                     Visit Rhinon Labs <ArrowUpRight className="size-3.5" />
                 </a>

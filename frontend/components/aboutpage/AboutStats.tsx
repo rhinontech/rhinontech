@@ -52,8 +52,8 @@ export default function AboutStats() {
                             <span className="inline-block mr-6 md:mr-64 align-middle -mt-1 md:-mt-2">
                                 <Globe className="size-6 md:size-8 text-white" />
                             </span>
-                            Defining the future of brands through design, digital excellence and human-centric storytelling, crafting{" "}
-                            <span className="text-white/30">meaningful experiences that inspire connection and lasting impact.</span>
+                            We build and operate a family of technology products — designed, engineered and run in-house,{" "}
+                            <span className="text-white/30">with the same standard across everything we ship.</span>
                         </h2>
                     </Reveal>
                 </div>
@@ -77,28 +77,28 @@ export default function AboutStats() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-12">
                 <Reveal className="text-left">
                     <div className="font-display text-6xl md:text-[80px] font-medium tracking-tight text-white leading-none">
-                        <CountUp to={35} suffix="+" />
+                        <CountUp to={3} suffix="+" />
                     </div>
                     <div className="mt-3 text-sm md:text-base text-white/50 leading-relaxed">
-                        Awards &<br />Recognizations
+                        Products &<br />Ventures
                     </div>
                 </Reveal>
 
                 <Reveal className="text-left md:text-center">
                     <div className="font-display text-6xl md:text-[80px] font-medium tracking-tight text-white leading-none">
-                        <CountUp to={65} suffix="" />
+                        <CountUp to={100} suffix="%" />
                     </div>
                     <div className="mt-3 text-sm md:text-base text-white/50 leading-relaxed">
-                        Satisfied Clients &<br />Partners
+                        Built<br />in-house
                     </div>
                 </Reveal>
 
                 <Reveal className="text-left md:text-right">
                     <div className="font-display text-6xl md:text-[80px] font-medium tracking-tight text-white leading-none">
-                        <CountUp to={98} suffix="+" />
+                        <CountUp to={1} suffix="" />
                     </div>
                     <div className="mt-3 text-sm md:text-base text-white/50 leading-relaxed">
-                        Projects Completed<br />Worldwide
+                        House,<br />one team
                     </div>
                 </Reveal>
             </div>

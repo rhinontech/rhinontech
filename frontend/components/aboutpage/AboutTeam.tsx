@@ -7,25 +7,25 @@ import { IMG } from "@/components/homepage/constants";
 
 const TEAM = [
     {
-        name: "James Anderson",
+        name: "Prabhat Patra",
         avatar: IMG.avatar1,
-        desc: "James is a seasoned Design Lead who bridges the gap between creative technical & execution. He specializes in building scalable design systems.",
-        exp: "6 years",
-        role: "DESIGN LEAD",
+        desc: "Founder of Rhinon Tech. Sets the product vision and steers the company's house of products from idea to launch.",
+        exp: "Core team",
+        role: "FOUNDER",
     },
     {
-        name: "Oliver Bennett",
+        name: "Varun Mathiyalagan",
         avatar: IMG.avatar2,
-        desc: "Oliver is a logic-driven Full Stack Developer who thrives in the space where clean code meets seamless performance.",
-        exp: "3 years",
-        role: "DEVELOPER",
+        desc: "Backend developer. Builds the APIs, data models and services that power Rhinon's products.",
+        exp: "Core team",
+        role: "BACKEND DEVELOPER",
     },
     {
-        name: "William Carter",
+        name: "Ahmar Ansari",
         avatar: IMG.avatar3,
-        desc: "William is a high-level Market Strategist known for turning raw data into growth roadmaps. He specializes in competitive positioning.",
-        exp: "4 years",
-        role: "MARKET STRATEGIST",
+        desc: "Frontend developer. Crafts the interfaces and experiences across Rhinon's products and sites.",
+        exp: "Core team",
+        role: "FRONTEND DEVELOPER",
     },
 ];
 
@@ -161,7 +161,7 @@ export default function AboutTeam() {
                 </Reveal>
                 <Reveal delay={0.15}>
                     <h2 className="font-display text-5xl sm:text-6xl md:text-[80px] font-semibold tracking-tight mt-6 leading-none">
-                        Our Experts
+                        The team
                     </h2>
                 </Reveal>
             </div>

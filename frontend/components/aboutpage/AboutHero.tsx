@@ -45,14 +45,14 @@ export default function AboutHero() {
                     <div className="md:col-span-6">
                         <Reveal delay={0.2}>
                             <h2 className="text-white text-2xl sm:text-3xl font-bold tracking-tight max-w-sm leading-tight">
-                                Our Creativity With Clear Purpose
+                                One company. A house of products.
                             </h2>
                         </Reveal>
                     </div>
                     <div className="md:col-span-6 flex md:justify-end">
                         <Reveal delay={0.4} className="w-full flex md:justify-end">
                             <p className="text-white/60 text-sm sm:text-base max-w-xs leading-relaxed">
-                                A creative studio focused on building brands that connect, inspire, and grow.
+                                Rhinon Tech designs, builds and operates its own technology products — from SaaS to consumer apps — entirely in-house.
                             </p>
                         </Reveal>
                     </div>

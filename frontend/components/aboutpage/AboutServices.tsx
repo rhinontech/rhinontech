@@ -8,19 +8,19 @@ import { IMG } from "@/components/homepage/constants";
 export default function AboutServices() {
     const services = [
         {
-            title: "Visual Heritage",
-            img: IMG.brand2,
-            desc: "Crafting iconic legacies through strategic and elegant design.",
+            title: "Saleszium",
+            img: IMG.port1,
+            desc: "All-in-one customer engagement & sales platform — AI chatbot, CRM, automation and campaigns.",
         },
         {
-            title: "Motion & Style",
-            img: IMG.brand4,
-            desc: "Bringing concepts to life through fluid and expressive design.",
+            title: "Furrcircle",
+            img: IMG.port2,
+            desc: "India's all-in-one app for pet parents — social, a digital health passport and a local community.",
         },
         {
-            title: "Brand Strategy",
-            img: IMG.brand1,
-            desc: "Defining timeless identities through refined and purposeful design.",
+            title: "Rhinon Labs",
+            img: IMG.port3,
+            desc: "Our in-house product studio — design, build, deploy and support. It speaks for itself.",
         },
     ];
 
@@ -45,17 +45,17 @@ export default function AboutServices() {
                     <Reveal>
                         <span className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/[0.04] px-4 py-1.5 text-xs text-white/80">
                             <span className="size-1.5 rounded-full bg-white animate-pulse" />
-                            Our Services
+                            Our products
                         </span>
                     </Reveal>
                     <Reveal delay={0.15}>
                         <h2 className="font-display text-5xl sm:text-6xl md:text-[80px] font-semibold tracking-tight mt-6 leading-none">
-                            What we do
+                            What we build
                         </h2>
                     </Reveal>
                     <Reveal delay={0.3} className="flex justify-center items-center">
                         <p className="mt-6 max-w-lg text-sm sm:text-base text-white/60 leading-relaxed">
-                            Elevating brand presence through cohesive visual systems and creative storytelling across global markets.
+                            A growing family of products — built, owned and operated by Rhinon Tech.
                         </p>
                     </Reveal>
                 </div>

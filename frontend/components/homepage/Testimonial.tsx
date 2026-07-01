@@ -37,8 +37,8 @@ export default function Testimonial() {
     <section className="relative mx-auto max-w-[1400px] px-6 py-16 md:py-24 pb-28 md:pb-24 text-white">
       <div className="grid gap-10 md:grid-cols-12 items-center">
         {/* LEFT - Portrait Image */}
-        <div className="col-span-12 md:col-span-5 flex justify-center">
-          <div className="relative aspect-[3/4] w-full max-w-[320px] md:max-w-none overflow-hidden rounded-[200px] bg-white/5 border border-white/10 shadow-2xl">
+        <div className="col-span-12 md:col-span-5 w-full flex justify-center">
+          <div className="relative aspect-[3/4] w-full max-w-[280px] sm:max-w-[320px] md:max-w-none overflow-hidden rounded-[200px] bg-white/5 border border-white/10 shadow-2xl mx-auto">
             <AnimatePresence mode="wait">
               <motion.img
                 key={index}

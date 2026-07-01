@@ -15,7 +15,7 @@ export function ServiceBrand() {
         { t: "Omnichannel Inbox", img: IMG.brand3, body: "Website chat, WhatsApp and email in one shared inbox." },
         { t: "Automation", img: IMG.brand4, body: "Workflows and campaigns that nurture and convert on autopilot." },
     ];
-    const [active, setActive] = useState(2);
+    const [active, setActive] = useState(1);
     return (
         <section className="mx-auto max-w-[1400px] px-6 py-16 md:py-24">
             <div className="relative flex flex-col items-center text-center">
@@ -47,7 +47,6 @@ export function ServiceBrand() {
 
             <div
                 className="mt-14 flex flex-col md:flex-row h-[640px] md:h-[420px] gap-3 md:gap-4"
-                onMouseLeave={() => setActive(2)}
             >
                 {tiles.map((t, i) => {
                     const isActive = active === i;
@@ -55,6 +54,7 @@ export function ServiceBrand() {
                         <motion.div
                             key={t.t}
                             onMouseEnter={() => setActive(i)}
+                            onMouseLeave={() => setActive(i)}
                             animate={{ flexGrow: isActive ? (typeof window !== "undefined" && window.innerWidth < 768 ? 6 : 5) : 1 }}
                             transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
                             className="relative h-full min-w-0 cursor-pointer overflow-hidden rounded-2xl bg-white/5"

@@ -40,21 +40,36 @@ function RecognitionsMarquee() {
         return () => window.removeEventListener("resize", measure);
     }, []);
 
+    useEffect(() => {
+        const unsubscribe = x.on("change", (latest) => {
+            const half = halfWidthRef.current;
+            if (!half) return;
+            if (latest <= -half) {
+                x.set(latest + half);
+            } else if (latest > 0) {
+                x.set(latest - half);
+            }
+        });
+        return () => unsubscribe();
+    }, [x]);
+
     useAnimationFrame((_, delta) => {
         if (draggingRef.current) return;
         const target = hoverRef.current ? 15 : speedRef.current;
         currentSpeedRef.current += (target - currentSpeedRef.current) * 0.05;
         const half = halfWidthRef.current;
         if (!half) return;
-        let next = x.get() - (currentSpeedRef.current * delta) / 1000;
-        if (next <= -half) next += half;
-        if (next > 0) next -= half;
+        const next = x.get() - (currentSpeedRef.current * delta) / 1000;
         x.set(next);
     });
 
     return (
         <div
-            className="mt-16 cursor-grab overflow-hidden active:cursor-grabbing"
+            className="relative mt-16 cursor-grab overflow-hidden active:cursor-grabbing"
+            style={{
+                maskImage: "linear-gradient(to right, transparent, black 33%, black 67%, transparent)",
+                WebkitMaskImage: "linear-gradient(to right, transparent, black 33%, black 67%, transparent)",
+            }}
             onMouseEnter={() => (hoverRef.current = true)}
             onMouseLeave={() => (hoverRef.current = false)}
         >
@@ -69,25 +84,19 @@ function RecognitionsMarquee() {
                 onDragStart={() => (draggingRef.current = true)}
                 onDragEnd={() => {
                     draggingRef.current = false;
-                    const half = halfWidthRef.current;
-                    if (!half) return;
-                    let v = x.get();
-                    if (v <= -half) v += half;
-                    if (v > 0) v -= half;
-                    x.set(v);
                 }}
             >
                 {items.map((r, i) => (
                     <div
                         key={`${r.name}-${i}`}
-                        className="group w-[190px] shrink-0 select-none"
+                        className="group w-[180px] shrink-0 select-none"
                     >
-                        <div className="relative aspect-square overflow-hidden rounded-[24px] border border-white/10 flex items-center justify-center transition duration-500 opacity-100 group-hover:opacity-100 group-hover:border-white/20 group-hover:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.8)]">
+                        <div className="relative aspect-square overflow-hidden rounded-[24px] border flex items-center justify-center transition duration-500 opacity-100 group-hover:opacity-100 border-white/20 group-hover:shadow-[0_20px_60px_-20px_rgba(0,0,0,0.8)]">
                             <img
                                 src={r.img}
                                 alt={r.name}
                                 draggable={false}
-                                className="w-[110px] h-[110px] rounded-[18px] object-cover transition duration-500 group-hover:scale-105"
+                                className="w-[120px] h-[120px] rounded-[18px] object-cover transition duration-500 group-hover:scale-105"
                             />
                         </div>
                         <div className="mt-4 text-center transition duration-500 opacity-60 group-hover:opacity-100">

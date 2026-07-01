@@ -118,7 +118,7 @@ export default function TopBar() {
                 initial={{ y: -40, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ delay: 1.0, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                className="absolute top-4 md:top-6 left-0 right-0 z-50 flex items-center justify-end sm:justify-between px-4 sm:px-6 md:px-20 py-3 md:py-5"
+                className="absolute top-4 md:top-6 left-0 right-0 z-50 flex items-center justify-end sm:justify-between px-4 sm:px-6 md:px-18 py-3 md:py-5"
             >
                 <div className="flex items-center gap-3">
                     <motion.button
@@ -127,7 +127,7 @@ export default function TopBar() {
                         initial="initial"
                         className="bg-[#5a5c5f] backdrop-blur flex items-center gap-3 rounded-[12px] p-1.5 sm:pr-6 text-[15px] font-semibold text-black border border-white/10 cursor-pointer scale-90 sm:scale-100 origin-right sm:origin-left"
                     >
-                        <div className="relative size-10 bg-black rounded-[10px] overflow-hidden flex flex-col items-center justify-center gap-[3px]">
+                        <div className="relative size-9 bg-black rounded-[10px] overflow-hidden flex flex-col items-center justify-center gap-[3px]">
                             <motion.div
                                 variants={{
                                     hover: { height: "100%" },
@@ -148,7 +148,7 @@ export default function TopBar() {
                                 />
                             ))}
                         </div>
-                        <span className="font-bold text-lg hidden sm:inline">Menu</span>
+                        <span className="text-lg hidden sm:inline">Menu</span>
                     </motion.button>
                     <div className="hidden text-lg text-white/70 md:flex items-center gap-2 tracking-tight">
                         <span>/ Bhubaneswar, India - {time}</span>

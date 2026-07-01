@@ -143,7 +143,7 @@ export default function HeroSection() {
 
             <motion.div
                 style={{ y: titleY }}
-                className="relative z-10 mx-auto flex h-auto lg:h-full w-full flex-col justify-between gap-10 lg:gap-0 px-6 md:px-15 pt-52 lg:pt-28 pb-10"
+                className="relative z-10 mx-auto flex h-auto lg:h-full w-full flex-col justify-between gap-10 lg:gap-0 px-6 md:px-15 pt-52 lg:pt-32 pb-10"
             >
                 {/* Massive wordmark */}
                 <div>
@@ -152,37 +152,45 @@ export default function HeroSection() {
                         initial={{ y: 30, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 1.2, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-                        className="mt-4 text-[20px] font-semibold leading-[1.1] tracking-tight text-white md:text-[32px]"
+                        className="mt-8 text-[16px] font-semibold leading-[1.1] tracking-tight text-white md:text-[28px]"
                     >
                         <div>A House of <br /> Products</div>
                     </motion.div>
                 </div>
 
                 {/* Bottom row */}
-                <div className="grid grid-cols-12 items-start lg:items-end gap-8 lg:gap-6">
+                <div className="grid mt-24 grid-cols-12 items-start lg:items-end gap-8 lg:gap-6">
                     <motion.div
                         initial={{ y: 40, opacity: 0 }}
                         animate={{ y: 0, opacity: 1 }}
                         transition={{ delay: 1.4, duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
                         className="col-span-12 md:col-span-6 lg:col-span-5 space-y-6"
                     >
-                        <div className="flex items-center gap-4">
-                            <div className="flex -space-x-3">
-                                {[IMG.avatar1, IMG.avatar2, IMG.avatar3].map((src) => (
-                                    <img
-                                        key={src}
-                                        src={src}
-                                        alt=""
-                                        className="size-12 lg:size-14 rounded-full border-2 border-black object-cover"
-                                    />
-                                ))}
+                        <div className="flex items-center gap-6">
+                            {/* Pill Container */}
+                            <div className="bg-[#1c1c1e] border border-white/10 rounded-full p-1.5 px-2 flex items-center justify-center">
+                                <div className="flex -space-x-3.5">
+                                    {[IMG.avatar1, IMG.avatar2, IMG.avatar3].map((src) => (
+                                        <img
+                                            key={src}
+                                            src={src}
+                                            alt=""
+                                            className="size-11 rounded-full border-2 border-[#1c1c1e] object-cover"
+                                        />
+                                    ))}
+                                </div>
                             </div>
+
+                            {/* Vertical Divider */}
+                            <div className="h-10 w-[1px] bg-white/10" />
+
+                            {/* Stats */}
                             <div>
-                                <div className="text-2xl lg:text-3xl font-semibold">3+</div>
-                                <div className="text-xs lg:text-sm text-white/60">Products</div>
+                                <div className="text-3xl lg:text-4xl font-semibold text-white tracking-tight leading-none">3+</div>
+                                <div className="text-sm lg:text-base text-zinc-400 font-medium mt-1">Products</div>
                             </div>
                         </div>
-                        <p className="max-w-[22rem] text-sm lg:text-[15px] leading-relaxed text-white/75">
+                        <p className="max-w-[20rem] text-sm lg:text-[15px] leading-relaxed text-white/75">
                             Rhinon Tech builds and operates a family of technology products —
                             designed, engineered and run in-house.
                         </p>
@@ -222,7 +230,7 @@ export default function HeroSection() {
 function RhinonWordmark() {
     const letters = "Rhinon".split("");
     return (
-        <h1 className="font-display text-[clamp(4.2rem,16vw,24rem)] font-[500] leading-[0.82] tracking-[-0.075em]">
+        <h1 className="font-display text-[clamp(5.2rem,19vw,24rem)] font-[500] leading-[0.82] tracking-[-0.075em]">
             {letters.map((l, i) => (
                 <motion.span
                     key={i}
@@ -241,7 +249,7 @@ function RhinonWordmark() {
 function AwardCard({ index, setIndex }: { index: number; setIndex: (i: number) => void }) {
     const a = AWARDS[index];
     return (
-        <div className="glass-pill relative overflow-hidden rounded-2xl p-7 pb-5 min-h-[210px]">
+        <div className="bg-black relative overflow-hidden rounded-2xl p-7 pb-7 min-h-[210px] flex flex-col justify-between">
             <AnimatePresence mode="wait">
                 <motion.div
                     key={index}

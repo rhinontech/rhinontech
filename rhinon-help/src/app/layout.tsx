@@ -4,7 +4,7 @@ import "./globals.css";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { SearchProvider } from "@/components/search/SearchProvider";
 import { ThemeScript } from "@/components/theme/ThemeScript";
-import { getSearchIndex } from "@/lib/search";
+import { getPublicSearchIndex } from "@/lib/search";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,7 +37,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const searchIndex = getSearchIndex();
+  // Public entries only — gated (developers) docs are merged in client-side
+  // by <SearchProvider> via /api/search/gated once the session is verified.
+  const searchIndex = getPublicSearchIndex();
   return (
     <html
       lang="en"

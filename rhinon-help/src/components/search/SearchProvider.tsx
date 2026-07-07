@@ -27,6 +27,9 @@ export function SearchProvider({
   children: React.ReactNode;
 }) {
   const [open, setOpen] = React.useState(false);
+  // Gated (developer-track) entries are never in the server-rendered index —
+  // they're fetched here and come back empty without a valid session.
+  const [gated, setGated] = React.useState<SearchDoc[]>([]);
 
   React.useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
@@ -39,15 +42,32 @@ export function SearchProvider({
     return () => document.removeEventListener("keydown", onKey);
   }, []);
 
+  React.useEffect(() => {
+    let cancelled = false;
+    fetch("/api/search/gated", { cache: "no-store" })
+      .then((res) => (res.ok ? res.json() : { docs: [] }))
+      .then((data: { docs?: SearchDoc[] }) => {
+        if (!cancelled && Array.isArray(data?.docs)) setGated(data.docs);
+      })
+      .catch(() => {
+        /* stay public-only */
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const fullIndex = React.useMemo(() => [...index, ...gated], [index, gated]);
+
   const value = React.useMemo<SearchContextValue>(
-    () => ({ open, setOpen, toggle: () => setOpen((v) => !v), index }),
-    [open, index]
+    () => ({ open, setOpen, toggle: () => setOpen((v) => !v), index: fullIndex }),
+    [open, fullIndex]
   );
 
   return (
     <SearchContext.Provider value={value}>
       {children}
-      <CommandPalette open={open} onOpenChange={setOpen} index={index} />
+      <CommandPalette open={open} onOpenChange={setOpen} index={fullIndex} />
     </SearchContext.Provider>
   );
 }

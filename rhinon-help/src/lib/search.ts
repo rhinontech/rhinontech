@@ -67,3 +67,20 @@ export function getSearchIndex(): SearchDoc[] {
     buildSpace(space, product.id, product.name, track)
   );
 }
+
+/**
+ * Public entries only (guide tracks). This is what gets embedded in the
+ * statically-rendered page payload — gated (developers) docs must never ship
+ * in public HTML, or their titles/headings leak past the login gate.
+ */
+export function getPublicSearchIndex(): SearchDoc[] {
+  return getSearchIndex().filter((doc) => doc.track !== "developers");
+}
+
+/**
+ * Gated entries only (developer tracks). Served by `/api/search/gated` after
+ * the session cookie is verified, and merged into the palette client-side.
+ */
+export function getGatedSearchIndex(): SearchDoc[] {
+  return getSearchIndex().filter((doc) => doc.track === "developers");
+}
